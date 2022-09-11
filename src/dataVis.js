@@ -1,24 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import { VscChevronDown } from "react-icons/vsc";
+import axios from 'axios'
+
+import { VscChevronDown } from "react-icons/vsc"
 import { FaCaretDown } from "react-icons/fa"
 
-import Navbar from './Navbar';
+import Navbar from './Navbar'
+import FirstChart from './firstChart'
 
 import './dataVis.css'
 
 export default function DataVis() {
 
-    const [input, setInput] = useState('Choose a region')
-    const [regions, setRegions] = useState(false)
-    const [year, setYear] = useState(false)
+    const [firstChartTime, setFirstChartTime] = useState(7)
+    const [secChartTime, setSecChartTime] = useState(14)
+    const [location, setLocation] = useState('mellegue')
 
-    const locationStyle = {
-        display: 'none'
-    }
-
-    const togglRegions = () => {
-        setRegions(!regions)
+    const change = (event) => {
+        setLocation(event.target.value)
     }
 
     return (
@@ -30,44 +29,60 @@ export default function DataVis() {
                     <h1>Statistics</h1>
 
                     <div className='locationSection'>
-                        <p id='mock' onClick={togglRegions}>{input}</p>
-                        <FaCaretDown id='selector' size='1.2vw' onClick={togglRegions} />
-                    </div>
-                    <div className='location'>
-                        {
-                            regions ?
-                                <div>
-                                    <li onClick={togglRegions}>TEST3</li>
-                                    <li onClick={togglRegions}>TEST2</li>
-                                    <li onClick={togglRegions}>TEST3</li>
-                                </div>
-                                :
-                                <div></div>
-                        }
-
+                        <select className='location' onChange={change}>
+                            <option>Mellegue</option>
+                            <option>Sarrat</option>
+                            <option>Benmetir</option>
+                            <option>Kasseb</option>
+                            <option>Barbara</option>
+                            <option>Sidisalem</option>
+                            <option>Bouheurtma</option>
+                            <option>Joumine</option>
+                            <option>Ghezala</option> 
+                            <option>Melah</option>
+                            <option>Tine</option>
+                            <option>Siliana</option>
+                            <option>Lakhmess</option>
+                            <option>Rmil</option>
+                            <option>Birmcherga</option>
+                            <option>Rmel</option>
+                            <option>Nebhana</option>
+                            <option>Sidisaad</option>
+                            <option>Elhaouareb</option>
+                            <option>Sficifa</option>
+                            <option>Sidiach</option>
+                            <option>Elbrek</option>
+                            <option>Bezirk</option>
+                            <option>Chiba</option>
+                            <option>Masri</option>
+                            <option>Lebna</option>
+                            <option>Hma</option>
+                            <option>Abid</option>
+                        </select>
                     </div>
                 </div>
 
                 <div className='firstChart'>
-                    <div className='firstChartHeader'>
-                        <div className='yearSection'>
-                            <p id='mock2' onClick={togglRegions}>2022</p>
-                            <VscChevronDown id='selector2' size='1.2vw' onClick={togglRegions} />
-                        </div>
-                        <div className='year'>
-                            {
-                                year ?
-                                    <div>
-                                        <li onClick={togglRegions}>2021</li>
-                                        <li onClick={togglRegions}>2020</li>
-                                        <li onClick={togglRegions}>2019</li>
-                                    </div>
-                                    :
-                                    <div></div>
-                            }
-
-                        </div>
+                    <div className='timeSection' id='time1'>
+                        <select className='time'>
+                            <option>une semaine</option>
+                            <option onClick={() => {setFirstChartTime(14)}}>deux semaines</option>
+                            <option onClick={() => {setFirstChartTime(30)}}>30 jours</option>
+                        </select>
                     </div>
+                    <FirstChart date={firstChartTime} location={location} />
+                </div>
+                <div className='secChart'>
+                    <div className='timeSection' id='time2'>
+                        <select className='time'>
+                            <option>une semaine</option>
+                            <option onClick={() => {setFirstChartTime(14)}}>deux semaines</option>
+                            <option onClick={() => {setFirstChartTime(30)}}>30 jours</option>
+                        </select>
+                    </div>
+                </div>
+                <div className='thirdChart'>
+                    {console.log(location)}
                 </div>
             </div>
         </div>

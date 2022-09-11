@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Public+Sans:wght@400;700&display=swap');
 
 .visSection {
     border-top: 1px solid #70707063;
@@ -17,77 +17,61 @@
     color: #393939;
 }
 
-#selector {
+.locationSection {
     position: absolute;
-    color: #000000;
-    top: 45%;
-    right: 4%;
-    cursor: pointer;
+    right: 3%;
+    top: 2.5%;
 }
 
 .location {
-    position: absolute;
-    top: 90%;
-    right: 4.3%;
-    width: 16.8vw;
-    box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.13)
-}
-
-.location li {
-    list-style-type: none;
+    width: 8vw;
+    outline: none;
+    border: none;
+    font-size: 1vw;
     font-family: 'Public Sans', sans-serif;
-    font-size: .9vw;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 1.2vw;
-    margin-left: .5vw;
-    margin-bottom: .5vw;
 }
 
-#mock {
+.location option {
+    font-size: 1vw;
+}
+
+.timeSection {
     position: absolute;
+    right: 2.8%;
+}
+
+#time1 {
+    top: 10%;
+}
+
+#time2 {
     top: 40%;
-    right: 5%;
-    cursor: pointer;
-    font-size: 1.1vw;
+}
+
+.time {
+    width: 6.5vw;
+    outline: none;
+    border: none;
+    font-size: .8vw;
     font-family: 'Public Sans', sans-serif;
-    margin-top: 0vw;
-    padding-right: 150px;
+    font-weight: lighter;
+    cursor: pointer;
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
 }
 
-#selector2 {
+#time1::after, #time2::after {
+    content: '\1F783';
     position: absolute;
-    color: #000000;
-    top: 550%;
-    right: 4%;
+    top: -3px;
+    right: -12.6%;
+    padding: 0 1vw;
+    color: #C4C4C4;
     cursor: pointer;
 }
 
-.year {
-    position: absolute;
-    top: 90%;
-    right: 4.3%;
-    width: 16.8vw;
-    box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.13)
-}
-
-.year li {
-    list-style-type: none;
-    font-family: 'Public Sans', sans-serif;
-    font-size: .9vw;
-    cursor: pointer;
-    margin-top: 1.2vw;
-    margin-left: .5vw;
-    margin-bottom: .5vw;
-}
-
-#mock2 {
-    position: absolute;
-    top: 40%;
-    right: 5%;
-    cursor: pointer;
-    font-size: 1.1vw;
-    font-family: 'Public Sans', sans-serif;
-    margin-top: 0vw;
-    padding-right: 150px;
-}
 

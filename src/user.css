@@ -18,7 +18,6 @@
     top: 1vw;
     right: 1%;
     float: right;
-    width: 39%;
 }
 
 .userSection h1 {
@@ -45,7 +44,7 @@
 .form {
     position: absolute;
     left: 10%;
-    top: 17%;
+    top: 7%;
 }
 
 #contactAdmin {
@@ -73,13 +72,18 @@
     margin-top: 1.5vw;
 }
 
+@media only screen and (max-width: 1920px) and (min-width: 1669px) {
+    #pic {
+        top: 0vw;
+    }
+}
+
 @media only screen and (max-width: 1669px) and (min-width: 1470px) {
     #pic {
         position: relative;
         top: 2vw;
         right: 1%;
         float: right;
-        width: 44%;
     }
 }
 
@@ -89,17 +93,58 @@
         top: 3vw;
         right: 1%;
         float: right;
-        width: 48%;
+        width: 46%;
+    }
+
+    .userSection h1 {
+        font-size: 3.3vw;
+    }
+
+    .userSection p {
+        font-size: 1.1vw;
+    }
+
+    #mdp {
+        font-size: .85vw;
+    }
+
+    .connectButton {
+        font-size: 1.4vw;
     }
 }
 
 @media only screen and (max-width: 1320px) and (min-width: 1220px) {
     #pic {
         position: relative;
-        top: 4vw;
+        top: 6vw;
         right: 1%;
         float: right;
-        width: 53%;
+        width: 47%;
+    }
+
+    .userSection input {
+        width: 24vw;
+    }
+
+    .form {
+        top: 10%;
+    }
+
+    .userSection h1 {
+        font-size: 3.3vw;
+    }
+
+    .userSection p {
+        font-size: 1.2vw;
+    }
+
+    #mdp {
+        font-size: .95vw;
+    }
+
+    .connectButton {
+        font-size: 1.5vw;
+        width: 26vw;
     }
 }
 
@@ -112,8 +157,34 @@
         position: relative;
         top: 7vw;
         right: 1%;
-        float: right;
-        width: 50%;
+        width: 48%;
+    }
+
+    .userSection input {
+        width: 24vw;
+        padding: 1.5vw;
+    }
+
+    .form {
+        top: 10%;
+    }
+
+    .userSection h1 {
+        font-size: 3.3vw;
+    }
+
+    .userSection p {
+        font-size: 1.2vw;    
+    }
+
+    #mdp {
+        font-size: 1vw;
+    }
+
+    .connectButton {
+        font-size: 1.5vw;
+        width: 27vw;
+        padding: 1.5vw;
     }
 }
 
@@ -124,10 +195,38 @@
     
     #pic {
         position: relative;
-        top: 10vw;
+        top: 5vw;
         right: 1%;
         float: right;
-        width: 55%;
+        width: 53%;
+    }
+
+    .userSection input {
+        width: 28vw;
+        padding: 1.8vw;
+    }
+
+    .form {
+        top: 6%;
+        left: 7%;
+    }
+
+    .userSection h1 {
+        font-size: 3.8vw;
+    }
+
+    .userSection p {
+        font-size: 1.5vw;    
+    }
+
+    #mdp {
+        font-size: 1.2vw;
+    }
+
+    .connectButton {
+        font-size: 1.5vw;
+        width: 31vw;
+        padding: 1.8vw;
     }
 }
 
@@ -156,10 +255,37 @@
     
     #pic {
         position: relative;
-        top: 15vw;
-        right: 1%;
+        top: 10vw;
+        right: 3%;
         float: right;
-        width: 50%;
+        width: 55%;
+    }
+    .userSection input {
+        width: 26vw;
+        padding: 1.8vw;
+    }
+
+    .form {
+        top: 7%;
+        left: 6%;
+    }
+
+    .userSection h1 {
+        font-size: 4vw;
+    }
+
+    .userSection p {
+        font-size: 1.7vw;    
+    }
+
+    #mdp {
+        font-size: 1.3vw;
+    }
+
+    .connectButton {
+        font-size: 1.9vw;
+        width: 29.8vw;
+        padding: 1.8vw;
     }
 }
 
@@ -170,10 +296,38 @@
     
     #pic {
         position: relative;
-        top: 4vw;
-        right: 18%;
-        width: 65%;
-        height: 60vw;
+        top: 2vw;
+        right: 24%;
+        width: 55%;
+        height: 26%;
+    }
+
+    .userSection input {
+        width: 41.5vw;
+        padding: 2.4vw;
+    }
+
+    .form {
+        top: 28%;
+        left: 24%;
+    }
+
+    .userSection h1 {
+        font-size: 4.2vw;
+    }
+
+    .userSection p {
+        font-size: 1.9vw;    
+    }
+
+    #mdp {
+        font-size: 1.6vw;
+    }
+
+    .connectButton {
+        font-size: 2.3vw;
+        width: 46.5vw;
+        padding: 2.4vw;
     }
 }
 
@@ -182,12 +336,44 @@
         height: 200vw;
     }
     
+    .userSection {
+        height: 200vw;
+    }
+    
     #pic {
         position: relative;
         top: 6vw;
-        right: 15%;
-        width: 70%;
-        height: 70vw;
+        right: 24%;
+        width: 55%;
+        height: 26%;
+    }
+
+    .userSection input {
+        width: 41.5vw;
+        padding: 2.4vw;
+    }
+
+    .form {
+        top: 33%;
+        left: 24%;
+    }
+
+    .userSection h1 {
+        font-size: 4.2vw;
+    }
+
+    .userSection p {
+        font-size: 1.9vw;    
+    }
+
+    #mdp {
+        font-size: 1.6vw;
+    }
+
+    .connectButton {
+        font-size: 2.3vw;
+        width: 46.5vw;
+        padding: 2.4vw;
     }
 }
 
@@ -196,12 +382,44 @@
         height: 200vw;
     }
     
+    .userSection {
+        height: 200vw;
+    }
+    
     #pic {
         position: relative;
-        top: 12vw;
-        right: 13%;
-        width: 75%;
-        height: 70vw;
+        top: 10vw;
+        right: 17%;
+        width: 70%;
+        height: 30%;
+    }
+
+    .userSection input {
+        width: 51vw;
+        padding: 4vw;
+    }
+
+    .form {
+        top: 38%;
+        left: 17%;
+    }
+
+    .userSection h1 {
+        font-size: 5.5vw;
+    }
+
+    .userSection p {
+        font-size: 2.7vw;    
+    }
+
+    #mdp {
+        font-size: 2.1vw;
+    }
+
+    .connectButton {
+        font-size: 3vw;
+        width: 59vw;
+        padding: 3vw;
     }
 }
 
@@ -212,9 +430,37 @@
     
     #pic {
         position: relative;
-        top: 12vw;
-        right: 11%;
-        width: 85%;
-        height: 75vw;
+        top: 10vw;
+        right: 13%;
+        width: 80%;
+        height: 40%;
+    }
+
+    .userSection input {
+        width: 57vw;
+        padding: 5vw;
+    }
+
+    .form {
+        top: 47%;
+        left: 11%;
+    }
+
+    .userSection h1 {
+        font-size: 6vw;
+    }
+
+    .userSection p {
+        font-size: 3vw;    
+    }
+
+    #mdp {
+        font-size: 2.5vw;
+    }
+
+    .connectButton {
+        font-size: 3.8vw;
+        width: 67vw;
+        padding: 4vw;
     }
 }

@@ -2,24 +2,23 @@
 
 .editSection {
     border-top: 1px solid #70707063;
-    position: relative;
-    top: 4.3vw;
-    left: 5.1%;
-    width: 94.4vw;
+    margin-top: 3.5vw;
+    margin-left: 5vw;
+    width: 95%;
     background-color: #FFFCFC;
 }
 
 #pic1 {
-    position: relative;
-    float: right;
-    margin-top: 5.5vw;
+    position: absolute;
+    right: -0.2%;
+    bottom: 0%;
 }
 
 #pic2 {
     position: absolute;
     right: 0%;
-    bottom: 8.6%;
-    width: 25%;
+    bottom: -0.2%;
+    width: 24.5%;
 }
 
 #info2 {
@@ -51,26 +50,26 @@
 
 .barrageName {
     position: absolute;
-    top: 40%;
-    left: 7%;
+    top: 46%;
+    left: 12%;
 }
 
 .barrageName select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;   
+    appearance: none;
 }
 
 .date {
     position: absolute;
-    top: 40%;
-    left: 33%;
+    top: 46%;
+    left: 37%;
 }
 
 .date select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;   
+    appearance: none;
 }
 
 .nameSelection {
@@ -111,18 +110,236 @@ option {
 #down1 {
     position: absolute;
     right: 5%;
-    top:25%;
+    top: 25%;
     color: #707070;
-    
+    cursor: pointer;
 }
 
 #down2 {
     position: absolute;
     right: 5%;
-    top:25%;
+    top: 25%;
     color: #707070;
+    cursor: pointer;
 }
 
 .default {
     display: none;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 500px) {
+    .editSection {
+        margin-left: 8vw;
+        margin-top: 7vw;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .editSection {
+        margin-left: 10vw;
+        margin-top: 7vw;
+    }
+    }
+
+@media only screen and (max-width: 1669px) and (min-width: 1400px) {
+    #pic2 {
+        width: 28%;
+    }
+
+    #pic1 {
+        width: 43%;
+    }
+
+    .dateSelection,
+    .nameSelection {
+        padding: 1.2vw;
+        padding-left: 2vw;
+    }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1200px) {
+    #pic2 {
+        width: 31%;
+    }
+
+    #pic1 {
+        width: 47%;
+    }
+
+    .dateSelection,
+    .nameSelection {
+        padding: 1.4vw;
+        padding-left: 2vw;
+        font-size: 1.1vw;
+    }
+
+    .validerButton {
+        bottom: 35%;
+        font-size: 1.8vw;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+    #pic2 {
+        width: 30%;
+    }
+
+    #pic1 {
+        width: 47%;
+    }
+
+    .dateSelection,
+    .nameSelection {
+        width: 27vw;
+        padding: 1.6vw;
+        padding-left: 2.5vw;
+        font-size: 1.2vw;
+    }
+
+    .barrageName {
+        top: 35%;
+    }
+
+    .date {
+        top: 35%;
+        left: 42%;
+    }
+
+
+    #info2 {
+        font-size: 3vw;
+        width: 36vw;
+        top: 16%;
+    }
+
+    .validerButton {
+        left: 30%;
+        bottom: 45%;
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 800px) {
+    #pic2 {
+        width: 34%;
+    }
+
+    #pic1 {
+        width: 54%;
+    }
+
+    .dateSelection,
+    .nameSelection {
+        width: 25vw;
+        padding: 1.6vw;
+        padding-left: 3vw;
+        font-size: 1.2vw;
+    }
+
+    #info2 {
+        font-size: 3vw;
+        width: 36vw;
+        top: 16%;
+    }
+
+    .barrageName {
+        top: 35%;
+    }
+
+    .date {
+        top: 35%;
+        left: 42%;
+    }
+
+    .validerButton {
+        left: 28%;
+        bottom: 48%;
+        font-size: 2.5vw;
+        width: 24vw;
+    }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 600px) {
+    #pic2 {
+        width: 38%;
+    }
+
+    #pic1 {
+        width: 65%;
+    }
+
+    #info2 {
+        font-size: 4vw;
+        width: 46vw;
+        top: 12%;
+        left: 15%;
+    }
+
+    .dateSelection,
+    .nameSelection {
+        width: 30vw;
+        padding: 2vw;
+        padding-left: 2vw;
+        font-size: 1.6vw;
+    }
+
+    .barrageName {
+        top: 28%;
+        left: 15%;
+    }
+
+    .date {
+        top: 28%;
+        left: 50%;
+    }
+
+    .validerButton {
+        left: 34%;
+        bottom: 56%;
+        font-size: 3.4vw;
+        width: 28vw;
+    }
+
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+    #pic2 {
+        width: 45%;
+    }
+
+    #pic1 {
+        width: 70%;
+    }
+
+    #info2 {
+        font-size: 5vw;
+        width: 60vw;
+        top: 12%;
+        left: 15%;
+    }
+
+    .dateSelection,
+    .nameSelection {
+        width: 38vw;
+        padding: 3vw;
+        padding-left: 4vw;
+        font-size: 2.4vw;
+    }
+
+    .barrageName {
+        top: 27%;
+        left: 15%;
+    }
+
+    .date {
+        top: 27%;
+        left: 58%;
+    }
+
+    .validerButton {
+        left: 39%;
+        bottom: 58%;
+        font-size: 4vw;
+        width: 32vw;
+    }
 }
