@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+.visSection {
+    border-top: 1px solid #70707063;
+    position: relative;
+    top: 4.3vw;
+    left: 5.1%;
+    width: 94.4vw;
+    height: 50vw;
+    background-color: #FFFCFC;
+}
+
+.dataHeader h1 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.4vw;
+    margin-left: 2.5vw;
+    color: #393939;
+}
+
+#selector {
+    position: absolute;
+    color: #000000;
+    top: 45%;
+    right: 4%;
+    cursor: pointer;
+}
+
+.location {
+    position: absolute;
+    top: 90%;
+    right: 4.3%;
+    width: 16.8vw;
+    box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.13)
+}
+
+.location li {
+    list-style-type: none;
+    font-family: 'Public Sans', sans-serif;
+    font-size: .9vw;
+    cursor: pointer;
+    margin-top: 1.2vw;
+    margin-left: .5vw;
+    margin-bottom: .5vw;
+}
+
+#mock {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    cursor: pointer;
+    font-size: 1.1vw;
+    font-family: 'Public Sans', sans-serif;
+    margin-top: 0vw;
+    padding-right: 150px;
+}
+
+#selector2 {
+    position: absolute;
+    color: #000000;
+    top: 550%;
+    right: 4%;
+    cursor: pointer;
+}
+
+.year {
+    position: absolute;
+    top: 90%;
+    right: 4.3%;
+    width: 16.8vw;
+    box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.13)
+}
+
+.year li {
+    list-style-type: none;
+    font-family: 'Public Sans', sans-serif;
+    font-size: .9vw;
+    cursor: pointer;
+    margin-top: 1.2vw;
+    margin-left: .5vw;
+    margin-bottom: .5vw;
+}
+
+#mock2 {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    cursor: pointer;
+    font-size: 1.1vw;
+    font-family: 'Public Sans', sans-serif;
+    margin-top: 0vw;
+    padding-right: 150px;
+}
+

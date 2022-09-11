@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Gilory";
+    src: local("Gilory"), url("../src/fonts/Gilroy-Light.otf") format("truetype");
+  }
+
+.connectedSection {
+    border-top: 1px solid #70707063;
+    position: relative;
+    top: 4.3vw;
+    left: 5.1%;
+    width: 94.4vw;
+    background-color: #FFFCFC;
+}
+
+.connectedSection img {
+    margin: auto;
+    padding: auto;
+    display: block;
+    margin-top: 5vw;
+
+}
+
+#info {
+    position: absolute;
+    font-family: 'Gilory';
+    font-size: 2vw;
+    color: #2E384D;
+    bottom: 1%;
+    left: 28.5%;
+    font-weight: bolder;
+}
+
+

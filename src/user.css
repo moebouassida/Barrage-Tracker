@@ -1,0 +1,220 @@
+@font-face {
+    font-family: "Gilory";
+    src: local("Gilory"), url("../src/fonts/Gilroy-Light.otf") format("truetype");
+  }
+
+.userSection {
+    border-top: 1px solid #70707063;
+    position: relative;
+    top: 4.3vw;
+    left: 5.1%;
+    width: 94.4vw;
+    height: 100vw;
+    background-color: #FFFCFC;
+}
+
+#pic {
+    position: relative;
+    top: 1vw;
+    right: 1%;
+    float: right;
+    width: 39%;
+}
+
+.userSection h1 {
+    font-family: 'Gilory';
+    color: #2E384D;
+    font-size: 2.5vw;
+}
+
+.userSection p {
+    font-family: 'Gilory';
+    color: #8C98A9;
+    font-size: .9vw;
+}
+
+.userSection input {
+    padding: 1vw;
+    width: 22vw;
+    border-radius: 6px;
+    border: 1px solid #E0E7FF;
+    outline: none;
+    font-size: 1vw;
+}
+
+.form {
+    position: absolute;
+    left: 10%;
+    top: 17%;
+}
+
+#contactAdmin {
+    color: #3a69e9;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#mdp {
+    margin-top: 2vw;
+    font-size: .8vw;
+}
+
+.connectButton {
+    text-align: center;
+    width: 24.1vw;
+    padding: 1vw;
+    background-color: #2E384D;
+    color: white;
+    font-size: 1.2vw;
+    font-family: 'Gilory';
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 1.5vw;
+}
+
+@media only screen and (max-width: 1669px) and (min-width: 1470px) {
+    #pic {
+        position: relative;
+        top: 2vw;
+        right: 1%;
+        float: right;
+        width: 44%;
+    }
+}
+
+@media only screen and (max-width: 1470px) and (min-width: 1320px) {
+    #pic {
+        position: relative;
+        top: 3vw;
+        right: 1%;
+        float: right;
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 1320px) and (min-width: 1220px) {
+    #pic {
+        position: relative;
+        top: 4vw;
+        right: 1%;
+        float: right;
+        width: 53%;
+    }
+}
+
+@media only screen and (max-width: 1220px) and (min-width: 1100px) {
+    .userSection {
+        height: 150vw;
+    }
+    
+    #pic {
+        position: relative;
+        top: 7vw;
+        right: 1%;
+        float: right;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 900px) {
+    .userSection {
+        height: 200vw;
+    }
+    
+    #pic {
+        position: relative;
+        top: 10vw;
+        right: 1%;
+        float: right;
+        width: 55%;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 504px) {
+    .userSection {
+        left: 8.3%;
+    }
+}
+
+@media only screen and (max-width: 504px) and (min-width: 500px) {
+    .userSection {
+        left: 8.5%;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .userSection {
+        left: 10.6%;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 800px) {
+    .userSection {
+        height: 200vw;
+    }
+    
+    #pic {
+        position: relative;
+        top: 15vw;
+        right: 1%;
+        float: right;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 660px) {
+    .userSection {
+        height: 200vw;
+    }
+    
+    #pic {
+        position: relative;
+        top: 4vw;
+        right: 18%;
+        width: 65%;
+        height: 60vw;
+    }
+}
+
+@media only screen and (max-width: 660px) and (min-width: 570px) {
+    .userSection {
+        height: 200vw;
+    }
+    
+    #pic {
+        position: relative;
+        top: 6vw;
+        right: 15%;
+        width: 70%;
+        height: 70vw;
+    }
+}
+
+@media only screen and (max-width: 570px) and (min-width: 500px) {
+    .userSection {
+        height: 200vw;
+    }
+    
+    #pic {
+        position: relative;
+        top: 12vw;
+        right: 13%;
+        width: 75%;
+        height: 70vw;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .userSection {
+        height: 200vw;
+    }
+    
+    #pic {
+        position: relative;
+        top: 12vw;
+        right: 11%;
+        width: 85%;
+        height: 75vw;
+    }
+}

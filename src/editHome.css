@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.editSection {
+    border-top: 1px solid #70707063;
+    position: relative;
+    top: 4.3vw;
+    left: 5.1%;
+    width: 94.4vw;
+    background-color: #FFFCFC;
+}
+
+#pic1 {
+    position: relative;
+    float: right;
+    margin-top: 5.5vw;
+}
+
+#pic2 {
+    position: absolute;
+    right: 0%;
+    bottom: 8.6%;
+    width: 25%;
+}
+
+#info2 {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2vw;
+    color: #2E384D;
+    width: 30vw;
+    font-weight: bolder;
+    top: 25%;
+    left: 12%;
+}
+
+.validerButton {
+    position: absolute;
+    bottom: 23%;
+    left: 27%;
+    font-size: 1.6vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    padding: .7vw;
+    width: 20vw;
+    border-radius: 15px;
+    border: none;
+    background-color: #ff6647d5;
+    color: white;
+    cursor: pointer;
+}
+
+.barrageName {
+    position: absolute;
+    top: 40%;
+    left: 7%;
+}
+
+.barrageName select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;   
+}
+
+.date {
+    position: absolute;
+    top: 40%;
+    left: 33%;
+}
+
+.date select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;   
+}
+
+.nameSelection {
+    border: none;
+    border-radius: 8px;
+    padding: .9vw;
+    padding-left: 2.1vw;
+    width: 22vw;
+    background-color: #EAEAEA;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: .75vw;
+    color: #6E6E6E;
+    cursor: pointer;
+    outline: none;
+}
+
+.dateSelection {
+    border: none;
+    border-radius: 8px;
+    padding: .9vw;
+    padding-left: 2.1vw;
+    width: 22vw;
+    background-color: #EAEAEA;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: .75vw;
+    color: #6E6E6E;
+    cursor: pointer;
+    outline: none;
+}
+
+option {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1vw;
+}
+
+#down1 {
+    position: absolute;
+    right: 5%;
+    top:25%;
+    color: #707070;
+    
+}
+
+#down2 {
+    position: absolute;
+    right: 5%;
+    top:25%;
+    color: #707070;
+}
+
+.default {
+    display: none;
+}

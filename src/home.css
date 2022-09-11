@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+* {
+    overflow: hidden;
+}
+
+.accountSection {
+    border-top: 1px solid #70707063;
+    position: relative;
+    top: 4.3vw;
+    left: 5.1%;
+    width: 94.4vw;
+    overflow: hidden;
+}
+
+#back {
+    position: relative;
+    top: -9vw;
+    width: 100%;
+}
+
+.visButton {
+    position: relative;
+    top: -28.5vw;
+    padding: 2.2vw 9vw;
+    left: 41%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 1487px) and (min-width: 1281px) {
+    #back {
+        height: 80vw;
+    }
+
+    .visButton {
+        top: -32vw;
+        padding: 2.5vw 9vw;
+    }
+}
+
+@media only screen and (max-width: 1281px) and (min-width: 1130px) {
+    #back {
+        height: 90vw;
+    }
+
+    .visButton {
+        top: -35.5vw;
+        padding: 2.9vw 9vw;
+    }
+}
+
+@media only screen and (max-width: 1130px) and (min-width: 1010px) {
+    #back {
+        height: 100vw;
+    }
+
+    .visButton {
+        top: -39vw;
+        padding: 3.3vw 9vw;
+    }
+}
+
+@media only screen and (max-width: 1010px) and (min-width: 915px) {
+    #back {
+        height: 110vw;
+    }
+
+    .visButton {
+        top: -42.5vw;
+        padding: 3.5vw 9vw;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 585px) {
+    #back {
+        left: 0%;
+    }
+
+    .accountSection {
+        left: 8%;
+    }
+}
+
+@media only screen and (max-width: 585px) and (min-width: 500px) {
+    #back {
+        left: 0%;
+    }
+
+    .accountSection {
+        left: 8%;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    #back {
+        left: 0%;
+    }
+
+    .accountSection {
+        left: 10.6%;
+    }
+}
+
+@media only screen and (max-width: 915px) and (min-width: 836px) {
+    #back {
+        height: 120vw;
+    }
+
+    .visButton {
+        top: -46vw;
+        padding: 4vw 9.1vw;
+    }
+}
+
+@media only screen and (max-width: 836px) and (min-width: 770px) {
+    #back {
+        height: 130vw;
+    }
+
+    .visButton {
+        top: -49.1vw;
+        padding: 4.1vw 9vw;
+        left: 44%;
+    }
+}
+
+@media only screen and (max-width: 770px) and (min-width: 665px) {
+    #back {
+        height: 150vw;
+    }
+
+    .visButton {
+        top: -56vw;
+        padding: 4.7vw 9vw;
+        left: 44%;
+    }
+}
+
+@media only screen and (max-width: 665px) and (min-width: 585px) {
+    #back {
+        height: 170vw;
+    }
+
+    .visButton {
+        top: -63vw;
+        padding: 5.6vw 8.8vw;
+        left: 44.5%;
+    }
+}
+
+@media only screen and (max-width: 585px) and (min-width: 400px) {
+    #back {
+        height: 220vw;
+    }
+
+    .visButton {
+        top: -80vw;
+        padding: 7.1vw 8.8vw;
+        left: 44.5%;
+    }
+}
+
+
+
+
