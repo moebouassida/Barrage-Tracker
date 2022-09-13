@@ -2,7 +2,7 @@
     font-family: "Gilory";
     src: local("Gilory"), url("../src/fonts/Gilroy-Light.otf") format("truetype");
   }
-
+  @import url(//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold);
 .connectedSection {
     border-top: 1px solid #70707063;
     position: relative;
@@ -11,23 +11,24 @@
     width: 94.4vw;
     background-color: #FFFCFC;
 }
-
-.connectedSection img {
+.image-connected
+{
+    width: 30vw;
+    height: auto;
     margin: auto;
+    margin-top: 5vw;
     padding: auto;
     display: block;
-    margin-top: 5vw;
 
 }
 
+
 #info {
-    position: absolute;
-    font-family: 'Gilory';
     font-size: 2vw;
     color: #2E384D;
-    bottom: 1%;
-    left: 28.5%;
-    font-weight: bolder;
+    font-family: "Gilroy ExtraBold";
+    margin-left: 25%;
+    margin-top: 5%;
 }
 
 

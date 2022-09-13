@@ -1,15 +1,15 @@
 .widgets {
     border-right: 1px solid #70707063;
     position: absolute;
-    top: -.1vw;
     height: 100%;
     width: 5vw;
+    top: 0%;
 }
 
 #userLogo {
     position: absolute;
     right: 27%;
-    top: 2%;
+    top: 6.5%;
     border-radius: 50%;
     width: 2.8vw;
     height: 2.8vw;
@@ -19,268 +19,63 @@
     position: absolute;
     right: 40%;
     bottom: 7%;
+    width: 1.4vw;
+    height: 1.4vw;
+}
+#logout:hover
+{
     cursor: pointer;
+    opacity: 0.3;
 }
 
 .icon {
     position: absolute;
-    top: 14%;
-    right: 45%;
+    right: 40%;
+    top: 19%;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.icon:hover
+{
     cursor: pointer;
+    opacity: 0.3;
 }
 
 #peop {
-    margin-top: 5vw;
+    position: absolute;
+    right: 40%;
+    top: 29%;
+    width: 1.5vw;
+    height: 1.5vw;
 }
-
-#peop2 {
-    margin-top: 5vw;
-    width: 1.05vw;
-    height: 1vw;
+#peop:hover
+{
+    cursor: pointer;
+    opacity: 0.3;
 }
 
 #edit {
-    margin-top: 10vw;
-    right: 41%;
+    position: absolute;
+    right: 35%;
+    top: 39%;
+    width: 1.8vw;
+    height: 1.4vw;
 }
-
-#edit2 {
-    margin-top: 10vw;
-    right: 41%;
-    width: 1.4vw;
-    height: 1.3vw;
+#edit:hover
+{
+    cursor: pointer;
+    opacity: 0.3;
 }
 
 #vis {
-    margin-top: 15vw;
-    right: 35%;
+    position: absolute;
+    right: 40%;
+    top: 49%;
+    width: 1.5vw;
+    height: 1.5vw;
 }
-
-@media only screen and (max-width: 1669px) and (min-width: 1500px) {
-    #peop2 {
-        width: 1.2vw;
-        height: 1.3vw;
-    }
-
-    #edit, #edit2 {
-        right: 40%;
-    }
-
-    #vis {
-        right: 33%;
-    }
-}
-
-@media only screen and (max-width: 1500px) and (min-width: 1300px) {
-    #peop2 {
-        width: 1.5vw;
-        height: 1.6vw;
-        right: 40%;
-    }
-
-    #edit, #edit2 {
-        right: 34%;
-    }
-
-    #vis {
-        right: 25%;
-    }
-}
-
-@media only screen and (max-width: 1300px) and (min-width: 1200px) {
-    #peop2 {
-        width: 1.6vw;
-        height: 1.6vw;
-    }
-    
-    #edit, #edit2 {
-        right: 40%;
-    }
-
-    #vis {
-        right: 31%;
-    }
-}
-
-@media only screen and (max-width: 1200px) and (min-width: 1100px) {
-    #peop2 {
-        width: 1.7vw;
-        height: 1.8vw;
-    }
-
-    #edit, #edit2 {
-        right: 40%;
-    }
-
-    #vis {
-        right: 31%;
-    }
-}
-
-@media only screen and (max-width: 1100px) and (min-width: 900px) {
-    #peop2 {
-        width: 1.9vw;
-        height: 1.8vw;
-    }
-}
-
-@media only screen and (max-width: 900px) and (min-width: 800px) {
-    #peop2 {
-        width: 2.4vw;
-        height: 2.5vw;
-        right: 37%;
-    }
-}
-
-@media only screen and (max-width: 800px) and (min-width: 700px) {
-    #peop2 {
-        width: 2.8vw;
-        height: 2.5vw;
-    }
-}
-
-@media only screen and (max-width: 700px) and (min-width: 580px) {
-    #peop2 {
-        width: 2.9vw;
-        height: 2.9vw;
-    }
-} 
-
-@media only screen and (max-width: 580px) and (min-width: 450px) {
-    #peop2 {
-        width: 3.8vw;
-        height: 4vw;
-    }
-} 
-
-@media only screen and (max-width: 450px) and (min-width: 400px) {
-    #peop2 {
-        width: 4.5vw;
-        height: 4.8vw;
-    }
-} 
-
-@media only screen and (max-width: 1200px) and (min-width: 900px) {
-    #userLogo {
-        right: 23%;
-        top: 4%;
-        width: 3.5vw;
-        height: 3.5vw;
-    }
-
-    .icon {
-        top: 17%;
-    }
-
-    #edit, #edit2 {
-        right: 37%;
-    }
-
-    #vis {
-        right: 30%;
-    }
-}
-
-@media only screen and (max-width: 900px) and (min-width: 600px) {
-    .widgets {
-        width: 8vw;
-    }
-    
-    #userLogo {
-        right: 30%;
-        top: 4%;
-        width: 4vw;
-        height: 4vw;
-    }
-
-    .icon {
-        top: 17%;
-        right: 40%;
-    }
-
-    #edit, #edit2 {
-        margin-top: 16vw;
-        right: 32%;
-    }
-
-    #peop, #peop2 {
-        margin-top: 8vw;
-    }
-
-    #vis {
-        margin-top: 25vw;
-        right: 24%;
-    }
-}
-
-@media only screen and (max-width: 600px) and (min-width: 500px) {
-    .widgets {
-        width: 8vw;
-    }
-    
-    #userLogo {
-        right: 14%;
-        top: 4%;
-        width: 7vw;
-        height: 7vw;
-    }
-
-    .icon {
-        top: 17%;
-        right: 37%;
-    }
-
-    #edit, #edit2 {
-        margin-top: 20vw;
-        right: 30%;
-    }
-
-    #peop, #peop2 {
-        margin-top: 10vw;
-    }
-
-    #vis {
-        margin-top: 30vw;
-        right: 20%;
-    }
-
-    #logout {
-        right: 33%;
-    }
-}
-
-@media only screen and (max-width: 500px) and (min-width: 400px) {
-    .widgets {
-        width: 10vw;
-    }
-    
-    #userLogo {
-        right: 18%;
-        top: 4%;
-        width: 8vw;
-        height: 8vw;
-    }
-
-    .icon {
-        top: 17%;
-        right: 37%;
-    }
-
-    #edit, #edit2 {
-        margin-top: 25vw;
-        right: 30%;
-    }
-
-    #peop, #peop2 {
-        margin-top: 13vw;
-    }
-
-    #vis {
-        margin-top: 37vw;
-        right: 20%;
-    }
-
-    #logout {
-        right: 33%;
-    }
+#vis:hover
+{
+    cursor: pointer;
+    opacity: 0.3;
 }

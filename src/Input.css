@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Poppins&display=swap');
+.img_brg{
+    position: absolute;
+    bottom:0;
+    right:0;
+    width: auto;
+    height:80%; 
+   
+}
+.input_brg{
+    color: #828081;
+    background-color:#EAEAEA;
+     border:none;
+    height: 55px;
+    width: 20%;
+    margin-top: 2vh;
+    margin-right: 0.4vw;
+    border-radius: 10px;
+    padding-left: 20px; 
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;   
+}
+.form_input{
+    display:flex;
+    flex-direction:column;
+   
+
+}
+.input1{
+    display:flex;
+    justify-content: center;
+    margin-right: 15vw;
+
+}
+.btn{
+    border:none;
+    width: 250px; 
+    height: 70px;
+    border: none;
+    border-radius: 7px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 410px;
+    font-family: 'Gilroy ExtraBold';
+    color:white;
+   background-color:#FF6647 ;
+   font-size: 3vh;
+   cursor:pointer;
+
+}

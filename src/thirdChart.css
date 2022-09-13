@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Public+Sans:wght@400;700&display=swap');
+
+.testi3 {
+    position: absolute;
+    left: 50%;
+    bottom: 8.8%;
+    width: 35%;
+}
+
+.chartInfo3 {
+    position: absolute;
+    left: 12%;
+    bottom: 25%;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.2vw;
+    font-weight: 1000;
+    color: #1B2767;
+}
+
+.ADS {
+    position: absolute;
+    left: 12%;
+    bottom: 18%;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 1000;
+    color: #1B2767;
+}
+
+#difDown {
+    position: absolute;
+    left: 12%;
+    bottom: 17%;
+    color: red;
+}
+
+#difUp {
+    position: absolute;
+    left: 12%;
+    bottom: 17%;
+    color: #13CD3C;
+}
+
+.dif {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.2vw;
+    font-weight: lighter;
+    position: absolute;
+    left: 14%;
+    bottom: 14.7%;
+}

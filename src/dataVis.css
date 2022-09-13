@@ -74,4 +74,7 @@
     cursor: pointer;
 }
 
-
+#mockChart {
+    position: absolute;
+    top: 3%;
+}

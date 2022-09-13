@@ -7,13 +7,15 @@ import { FaCaretDown } from "react-icons/fa"
 
 import Navbar from './Navbar'
 import FirstChart from './firstChart'
+import SecChart from './secChart'
+import ThirdChart from './thirdChart'
 
 import './dataVis.css'
 
 export default function DataVis() {
 
     const [firstChartTime, setFirstChartTime] = useState(7)
-    const [secChartTime, setSecChartTime] = useState(14)
+    const [secChartTime, setSecChartTime] = useState(7)
     const [location, setLocation] = useState('mellegue')
 
     const change = (event) => {
@@ -70,7 +72,7 @@ export default function DataVis() {
                             <option onClick={() => {setFirstChartTime(30)}}>30 jours</option>
                         </select>
                     </div>
-                    <FirstChart date={firstChartTime} location={location} />
+                    <SecChart date={secChartTime} location={location} />
                 </div>
                 <div className='secChart'>
                     <div className='timeSection' id='time2'>
@@ -80,9 +82,10 @@ export default function DataVis() {
                             <option onClick={() => {setFirstChartTime(30)}}>30 jours</option>
                         </select>
                     </div>
+                    <SecChart date={secChartTime} location={location} />
                 </div>
                 <div className='thirdChart'>
-                    {console.log(location)}
+                    <ThirdChart />
                 </div>
             </div>
         </div>

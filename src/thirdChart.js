@@ -1,59 +1,75 @@
 import React, { useEffect, useState } from 'react'
 
-import './firstChart.css'
+import { IoChevronUpCircleOutline, IoChevronDownCircleOutline } from "react-icons/io5"
 
 import axios from 'axios'
 
-import { Line } from 'react-chartjs-2'
+import './thirdChart.css'
 
 import {
     Chart as ChartJS,
     CategoryScale,
     LinearScale,
-    PointElement,
-    LineElement,
+    BarElement,
     Title,
     Tooltip,
     Legend,
-    DatasetController,
 } from 'chart.js'
+
+import { Bar } from 'react-chartjs-2'
+import { VscDiff } from 'react-icons/vsc'
 
 ChartJS.register(
     CategoryScale,
     LinearScale,
-    PointElement,
-    LineElement,
+    BarElement,
     Title,
     Tooltip,
-    Legend,
-);
+    Legend
+)
 
 
+export default function ThirdChart() {
 
-export default function FirstChart(props) {
+    const [barragesData0Array, setBarragesData0Array] = useState([])
+    const [barragesData1Array, setBarragesData1Array] = useState([])
 
-    const [barragesDataArray, setBarragesDataArray] = useState([])
+    const year = new Date().getFullYear()
+    var day1 = new Date().getDate() - 1
+    var day0 = new Date().getDate() - 2
+    var month = new Date().getMonth() + 1
 
-    const year = new Date().getFullYear
-    const day = new Date().getDate() - 1
-    const month = new Date().getMonth() + 1
+    if (day0 < 10) { day0 = '0' + day0 }
+    if (day1 < 10) { day1 = '0' + day1 }
+    if (month < 10) { month = '0' + month }
+
     useEffect(() => {
-        axios.get(`http://localhost:3020/api/element/visualisationThree?date=${year + '-' + month + '-' + day}`)
-            .then((res) => {setBarragesDataArray(res.data.data)
-            console.log(barragesDataArray)}) 
-    },[props.location, props.date])
+        axios.get(`http://localhost:3020/api/element/visualisationThree?date=${year + '-' + month + '-' + day1}`)
+            .then((res) => {
+                setBarragesData1Array(res.data.day.elem)
+            })
+
+        axios.get(`http://localhost:3020/api/element/visualisationThree?date=${year + '-' + month + '-' + day0}`)
+            .then((res) => {
+                setBarragesData0Array(res.data.day.elem)
+            })
+
+    }, [])
 
     const data = {
-        labels: barragesDataArray.map(data => data.Date.substr(5, 5)),
+        labels: barragesData1Array.map(val => val.Nom_Fr),
         datasets: [
             {
-                data: barragesDataArray.map(data => data.stock),
-                lineTension: .5,
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                data: barragesData1Array.map(val => val.stock),
+                backgroundColor: '#7947F7',
             },
         ],
     }
+
+    const average1 = data.datasets[0].data.reduce((sum, val) => sum + Number(val), 0)
+    const average0 = barragesData0Array.map(val => val.stock).reduce((sum, val) => sum + Number(val), 0)
+
+    const dif = average1 - average0
 
     const options = {
         responsive: true,
@@ -68,22 +84,31 @@ export default function FirstChart(props) {
                 display: false
             },
             x: {
-                grid: {
-                    display: false
-                },
+                display: false
             }
         },
     }
 
-    const average = data.labels.reduce((sum, value) => sum + value, 0)
-
     return (
         <div>
-            <h1 className='chartInfo3'>Apport D'eau Moyen</h1>
+            <h1 className='chartInfo3'>Stock Des Barrages Quotidien</h1>
             <div className='testi3'>
                 <Bar data={data} options={options} />
-                
             </div>
+            <h2 className='ADS'>{average1.toFixed(1)}mm</h2>
+            {
+                dif.toFixed(1) > 0 ?
+                    <div>
+                        <IoChevronUpCircleOutline id='difUp' size='1.5vw' />
+                        <p className='dif' style={{color:'#13CD3C'}}>{dif.toFixed(1)}%</p> 
+                    </div>
+                    :
+                    <div>
+                        <IoChevronDownCircleOutline id='difDown' size='1.5vw' />
+                        <p className='dif' style={{color:'red'}}>{dif.toFixed(1)}%</p> 
+                    </div>
+            }
+
         </div>
     )
 }

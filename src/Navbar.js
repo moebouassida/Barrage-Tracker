@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import logout from './img/logout.png'
 
@@ -19,6 +20,7 @@ import logo from './img/Logo.png'
 import './Navbar.css'
 
 export default function Navbar(props) {
+  const navigate = useNavigate()
 
   const [home, setHome] = useState(false)
   const [edit, setEdit] = useState(false)
@@ -53,41 +55,49 @@ export default function Navbar(props) {
         <div>
           {
             home ?
-              <img src={Home2} className='icon' />
+              <img src={Home2} className='icon' onClick={() => {
+                navigate('/')}}  />
               :
-              <img src={Home} className='icon' />
+              <img src={Home} className='icon' onClick={() => {
+                navigate('/')}} />
           }
         </div>
 
         <div>
           {
             peop ?
-              <img src={Peop2} className='icon' id='peop2' />
+              <img src={Peop2} id='peop' onClick={() => {
+                navigate('/login')}} />
               :
-              <img src={Peop} className='icon' id='peop' />
+              <img src={Peop} id='peop' onClick={() => {
+                navigate('/login')}} />
           }
         </div>
 
         <div>
-          {
+          {props.user ? 
             edit ?
-              <img src={Edit2} className='icon' id='edit2' />
+              <img src={Edit2} className='icon' id='vis' onClick={() => {
+                navigate('/data')}}  />
               :
-              <img src={Edit} className='icon' id='edit' />
+              <img src={Edit} className='icon' id='vis' onClick={() => {
+                navigate('/data')}} /> : null
           }
         </div>
 
         <div>
-          {
+          { 
             vis ?
-              <img src={Vis2} className='icon' id='vis' />
+              <img src={Vis2} id='edit' onClick={() => {
+                navigate('/data')}} />
               :
-              <img src={Vis} className='icon' id='vis' />
+              <img src={Vis} id='edit' onClick={() => {
+                navigate('/data')}} /> 
           }
         </div>
 
         <div>
-          <img src={logout} id='logout' />
+           { props.user ? <img src={logout} id='logout' /> : null}
         </div>
       </div>
     </div>

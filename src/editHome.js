@@ -14,7 +14,7 @@ import './editHome.css'
 export default function editHome() {
     return (
         <div>
-            <Navbar where={'Edit'} />
+            <Navbar where={'Edit'} user={true} />
             <div className='editSection'>
                 <img id='pic1' src={Pic1} />
                 <img id='pic2' src={Pic2} />

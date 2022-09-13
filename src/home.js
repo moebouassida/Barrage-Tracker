@@ -11,18 +11,27 @@ import './home.css'
 export default function Home() {
   
   const navigate = useNavigate()
+  const myStyle={
+    backgroundImage:`url(${Back})`,
+    position:'center',
+    top: '-9vw',
+    width: '100%',
+    height: '100%',
+    backgroundRepeat: 'no-repeat',
+            };
 
   return (
     <div>
-        <Navbar where={'Home'} />
+        <Navbar where={'Home'} user={false} />
 
         <div className='accountSection'>
-            <img id='back' src={Back} />
+            <div style={myStyle} >
+            <h1 className='status-home'>SUIVEZ  LE  STATUS DE TON BARRAGE !</h1>
+            <h1 className='stock-home'>STOCK &<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  APPORT</h1>
+            <button className='button-home' onClick={() => {
+          navigate('/data')}}>VISUALISER</button>
+            </div>
         </div>
-
-        <button className='visButton' onClick={() => {
-          navigate('/data')
-        }} ></button>
     </div>
   )
 }

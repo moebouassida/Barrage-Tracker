@@ -34,10 +34,9 @@ export default function FirstChart(props) {
     const [apportDataArray, setApportDataArray] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:3020/api/element/visualisationTwo?date=${props.date}&Nom_Fr=${props.location}`)
-            .then((res) => {setApportDataArray(res.data.data)
-            console.log(apportDataArray)}) 
-    },[props.location, props.date])
+        axios.get(`http://localhost:3020/api/element/visualisationOne?date=${props.date}&Nom_Fr=${props.location}`)
+            .then((res) => {console.log(res)}) 
+    },[])
 
     const data = {
         labels: apportDataArray.map(data => data.Date.substr(5, 5)),
@@ -77,8 +76,7 @@ export default function FirstChart(props) {
         <div>
             <h1 className='chartInfo'>Apport D'eau Moyen</h1>
             <div className='testi'>
-                <Line data={data} options={options} />
-                
+                <Line data={data} options={options} /> 
             </div>
         </div>
     )
