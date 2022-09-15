@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import axios from 'axios'
-
-import { VscChevronDown } from "react-icons/vsc"
-import { FaCaretDown } from "react-icons/fa"
 
 import Navbar from './Navbar'
 import FirstChart from './firstChart'
@@ -16,10 +13,114 @@ export default function DataVis() {
 
     const [firstChartTime, setFirstChartTime] = useState(7)
     const [secChartTime, setSecChartTime] = useState(7)
-    const [location, setLocation] = useState('mellegue')
+    const [location, setLocation] = useState("mellegue")
 
-    const change = (event) => {
-        setLocation(event.target.value)
+    const changeLocation = (event) => {
+        switch (event.target.value) {
+
+            case "M ellegue":
+                setLocation('mellegue')
+                break;
+            case "Sarrat":
+                setLocation('sarrat')
+                break;
+            case "Benmetir":
+                setLocation('benmetir')
+                break;
+            case "Kasseb":
+                setLocation('kasseb')
+                break;
+            case "Sidisalem":
+                setLocation('sidisalem')
+                break;
+            case "Bouheurtma":
+                setLocation('bouheurtma')
+                break;
+            case "Joumine":
+                setLocation('joumine')
+                break;
+            case "Ghezala":
+                setLocation('ghezala')
+                break;
+            case "Melah":
+                setLocation('melah')
+                break;
+            case "Tine":
+                setLocation('tine')
+                break;
+            case "Siliana":
+                setLocation('siliana')
+                break;
+            case "Lakhmess":
+                setLocation('lakhmess')
+                break;
+            case "Rmil":
+                setLocation('rmil')
+                break;
+            case "Birmcherga":
+                setLocation('birmcherga')
+                break;
+            case "Rmel":
+                setLocation('rmel')
+                break;
+            case "Nebhana":
+                setLocation('nebhana')
+                break;
+            case "Sidisaad":
+                setLocation('sidisaad')
+                break;
+            case "Elhaouareb":
+                setLocation('elhaouareb')
+                break;
+            case "Sficifa":
+                setLocation('sficifa')
+                break;
+            case "Sidiach":
+                setLocation('sidiach')
+                break;
+            case "Elbrek":
+                setLocation('elbrek')
+                break;
+            case "Bezirk":
+                setLocation('bezirk')
+                break;
+            case "Chiba":
+                setLocation('chiba')
+                break;
+            case "Bezirk":
+                setLocation('bezirk')
+                break;
+            case "Masri":
+                setLocation('masri')
+                break;
+            case "Lebna":
+                setLocation('lebna')
+                break;
+            case "Hma":
+                setLocation('hma')
+                break;
+            case "Abid":
+                setLocation('abid')
+                break;
+        }
+    }
+
+    const changeFirstTime = (event) => {
+        if (event.target.value == 'Une semaine')
+            setFirstChartTime(7)
+        else if (event.target.value == 'Deux semaines')
+            setFirstChartTime(14)
+        else
+            setFirstChartTime(30)
+    }
+
+    const changeSecTime = (event) => {
+        if (event.target.value == 'Une semaine')
+            setSecChartTime(7)
+        else if (event.target.value == 'Deux semaines')
+            setSecChartTime(14)
+        else
+            setSecChartTime(30)
     }
 
     return (
@@ -31,7 +132,7 @@ export default function DataVis() {
                     <h1>Statistics</h1>
 
                     <div className='locationSection'>
-                        <select className='location' onChange={change}>
+                        <select className='location' onChange={changeLocation}>
                             <option>Mellegue</option>
                             <option>Sarrat</option>
                             <option>Benmetir</option>
@@ -40,7 +141,7 @@ export default function DataVis() {
                             <option>Sidisalem</option>
                             <option>Bouheurtma</option>
                             <option>Joumine</option>
-                            <option>Ghezala</option> 
+                            <option>Ghezala</option>
                             <option>Melah</option>
                             <option>Tine</option>
                             <option>Siliana</option>
@@ -66,20 +167,20 @@ export default function DataVis() {
 
                 <div className='firstChart'>
                     <div className='timeSection' id='time1'>
-                        <select className='time'>
-                            <option>une semaine</option>
-                            <option onClick={() => {setFirstChartTime(14)}}>deux semaines</option>
-                            <option onClick={() => {setFirstChartTime(30)}}>30 jours</option>
+                        <select className='time' onChange={changeFirstTime}>
+                            <option>Une semaine</option>
+                            <option>Deux semaines</option>
+                            <option>30 jours</option>
                         </select>
                     </div>
-                    <SecChart date={secChartTime} location={location} />
+                    <FirstChart date={firstChartTime} location={location} />
                 </div>
                 <div className='secChart'>
                     <div className='timeSection' id='time2'>
-                        <select className='time'>
-                            <option>une semaine</option>
-                            <option onClick={() => {setFirstChartTime(14)}}>deux semaines</option>
-                            <option onClick={() => {setFirstChartTime(30)}}>30 jours</option>
+                        <select className='time' onChange={changeSecTime}>
+                            <option>Une semaine</option>
+                            <option>Deux semaines</option>
+                            <option>30 jours</option>
                         </select>
                     </div>
                     <SecChart date={secChartTime} location={location} />

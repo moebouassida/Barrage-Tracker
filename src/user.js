@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { useState,useContext } from 'react'
 import axios from 'axios'
+import { useNavigate,useSearchParams } from 'react-router-dom';
+import { UserContext } from './UserContext';
 
 import userimg from './img/user.png'
-
 import Navbar from './Navbar'
 import { useFormik } from "formik";
 import * as Yup from 'yup';
@@ -10,6 +11,10 @@ import * as Yup from 'yup';
 import './user.css'
 
 export default function User() {
+  const {value,setValue}=useContext(UserContext)
+  const [searchparams] = useSearchParams()
+  const session=searchparams.get('auth');
+  const navigate=useNavigate()
   const initialValues = {
     Email: "",
     Password: "",
@@ -23,13 +28,12 @@ export default function User() {
       .min(8, "Password is too short - should be 8 chars minimum."),
   });
   const formik = useFormik({
-    initialValues, validationSchema, onSubmit: (values) => { console.log(values); login(values,setBool,user,bool) }
+    initialValues, validationSchema, onSubmit: (values) => {login(values,setBool,navigate,setValue) }
   });
   const [bool,setBool]=useState(false)
-  const user = useRef({ token: null, username: null, admin: false });
   return (
     <div>
-      <Navbar where={'Peop'} user={false}  />
+      <Navbar where={'Peop'} user={value}  />
 
 
       <div className='userSection'>
@@ -71,7 +75,9 @@ export default function User() {
 
           </div>
           <button className='connectButton' type="sumbit" >SE CONNECTER</button>
-          { bool ? (<p className='login-error'>Identifiant invalide</p>): null }</form>
+          { bool ? (<p className='login-error'>Identifiant invalide !</p>): null }
+          { session ? (<p className='auth-error'>Session expirée, Merci de vous identifier !</p>): null }
+          </form>
           
           
 
@@ -80,15 +86,22 @@ export default function User() {
   )
 }
 
-function login(values,setBool,user,bool) {
+function login(values,setBool,navigate,setValue) {
   axios.post(`http://localhost:3020/api/user/login`,
    { email: values.Email, password: values.Password },)
     .then((res) => {
-      user.token=res.data.token;
-    user.username=res.data.username;
-    user.admin=res.data.admin;
-    console.log(user)
-    setBool(true)
+      localStorage.setItem('token',res.data.token);
+      localStorage.setItem('username',res.data.username);
+      setValue(true);
+    console.log(res.data)
+    if (res.data.message==="Valid password")
+    {
+      navigate('/account')
+    }
+    else
+    {
+      setBool(true)
+    }
     })
     .catch(error => setBool(true))
 }

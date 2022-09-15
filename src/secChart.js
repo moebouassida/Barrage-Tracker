@@ -15,7 +15,10 @@ import {
     Title,
     Tooltip,
     Legend,
+    Filler
 } from 'chart.js'
+
+import gradient from 'chartjs-plugin-gradient'
 
 ChartJS.register(
     CategoryScale,
@@ -25,28 +28,37 @@ ChartJS.register(
     Title,
     Tooltip,
     Legend,
-);
+    gradient,
+    Filler
+)
 
-
-
-export default function FirstChart(props) {
+export default function SecChart(props) {
 
     const [stockDataArray, setStockDataArray] = useState([])
 
+
     useEffect(() => {
-        console.log(props.date + '---' + props.location)
         axios.get(`http://localhost:3020/api/element/visualisationTwo?date=${props.date}&Nom_Fr=${props.location}`)
-            .then((res) => {setStockDataArray(res.data.data)}) 
-    }, [])
+            .then((res) => setStockDataArray(res.data.data))
+    }, [props.date, props.location])
 
     const data = {
         labels: stockDataArray.map(data => data.Date.substr(5, 5)),
         datasets: [
             {
                 data: stockDataArray.map(data => data.stock),
-                lineTension: .5,
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                lineTension: 0,
+                fill:true,
+                borderColor: '#4CDFE8',
+                gradient: {
+                    backgroundColor: {
+                        axis: 'y',
+                        colors: {
+                            0: 'white',
+                            50: 'rgba(76, 223, 232, .01)',                  
+                        }
+                    }
+                },
             },
         ],
     }
@@ -58,7 +70,6 @@ export default function FirstChart(props) {
                 display: false,
             },
         },
-
         scales: {
             y: {
                 display: false
@@ -69,15 +80,15 @@ export default function FirstChart(props) {
                 },
             }
         },
+        maintainAspectRatio: false 
     }
 
-    const average = data.labels.reduce((sum, value) => sum + value, 0)
 
     return (
         <div>
             <h1 className='chartInfo2'>Stock D'eau Moyen</h1>
             <div className='testi2'>
-                <Line data={data} options={options} />        
+                <Line data={data} options={options} />
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect,useContext } from 'react';
+import { useNavigate,createSearchParams } from 'react-router-dom';
 
 import logout from './img/logout.png'
 
@@ -16,12 +16,13 @@ import Vis from './img/Vis.png'
 import Vis2 from './img/Vis2.png'
 
 import logo from './img/Logo.png'
+import { UserContext } from './UserContext';
 
 import './Navbar.css'
 
 export default function Navbar(props) {
   const navigate = useNavigate()
-
+  const {value,setValue}=useContext(UserContext)
   const [home, setHome] = useState(false)
   const [edit, setEdit] = useState(false)
   const [peop, setPeop] = useState(false)
@@ -67,21 +68,29 @@ export default function Navbar(props) {
           {
             peop ?
               <img src={Peop2} id='peop' onClick={() => {
-                navigate('/login')}} />
+                if (value)
+                { navigate("/account")}
+              else {
+                navigate('/login')
+              } }}/>
               :
               <img src={Peop} id='peop' onClick={() => {
-                navigate('/login')}} />
-          }
+                if (value)
+                { navigate("/account")}
+              else {
+                navigate('/login')
+              } }} />
+            }
         </div>
 
         <div>
           {props.user ? 
             edit ?
               <img src={Edit2} className='icon' id='vis' onClick={() => {
-                navigate('/data')}}  />
+                navigate('/edit')}}  />
               :
               <img src={Edit} className='icon' id='vis' onClick={() => {
-                navigate('/data')}} /> : null
+              value ? navigate('/edit') : goLogin(navigate,value) }} /> : null
           }
         </div>
 
@@ -97,9 +106,15 @@ export default function Navbar(props) {
         </div>
 
         <div>
-           { props.user ? <img src={logout} id='logout' /> : null}
+           { props.user ? <img src={logout} id='logout' onClick={() => {
+          localStorage.removeItem('username');;localStorage.removeItem('token');;setValue(false);navigate('/')}} /> : null}
         </div>
       </div>
     </div>
   )
+}
+
+function goLogin(navigate,value)
+{
+    navigate({pathname:'/login',search:createSearchParams({ auth : true}).toString()})
 }

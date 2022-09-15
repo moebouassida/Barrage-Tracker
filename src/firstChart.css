@@ -3,16 +3,200 @@
 
 .testi {
     position: absolute;
-    top: 4%;
-    right: 20%;
-    width: 33%;
+    top: 20%;
+    right: 2.5%;
+    height: 20%;
+    width: 82%;
 }
 
 .chartInfo {
     position: absolute;
-    top: 7%;
-    left: 12%;
-    font-size: 1.2vw;
+    top: 15.5%;
+    left: 9%;
+    font-size: 1.1vw;
     font-family: 'Public Sans', sans-serif;
     color: #1B2767;
 }
+
+.ADS1 {
+    position: absolute;
+    left: 9%;
+    top: 28%;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 1000;
+    color: #1B2767;
+}
+
+#dif1Down {
+    position: absolute;
+    left: 9%;
+    top: 34%;
+    color: red;
+}
+
+#dif1Up {
+    position: absolute;
+    left: 9%;
+    top: 34%;
+    color: #13CD3C;
+}
+
+.dif1 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1vw;
+    font-weight: bolder;
+    position: absolute;
+    left: 10.7%;
+    top: 32.4%;
+}
+
+
+
+@media only screen and (max-width: 1500px) and (min-width: 1300px) {
+    .chartInfo {
+        font-size: 1.3vw;
+        top: 16%;
+    }
+
+    .ADS1 {
+        font-size: 1.4vw;
+    }
+
+    #dif1Up, #dif1Down {
+        top: 33%;
+    }
+
+    .dif1 {
+        font-size: 1.2vw;
+        left: 11%;
+        top: 31.5%;
+    }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 1100px) {
+    .chartInfo {
+        font-size: 1.4vw;
+    }
+
+    .ADS1 {
+        font-size: 1.5vw;
+    }
+
+    #dif1Up, #dif1Down {
+        top: 33%;
+    }
+
+    .dif1 {
+        font-size: 1.3vw;
+        left: 11.3%;
+        top: 31.7%;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 900px) {
+
+    .chartInfo {
+        font-size: 1.6vw;
+    }
+
+    .ADS1 {
+        font-size: 1.8vw;
+    }
+
+    #dif1Up, #dif1Down {
+        top: 33%;
+    }
+
+    .dif1 {
+        font-size: 1.6vw;
+        left: 12%;
+        top: 31.6%;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+    .testi {
+        width: 75%;
+    }
+  
+    .chartInfo {
+     font-size: 1.9vw;
+     left: 14%;
+    }
+    
+     .ADS1 {
+     font-size: 2.1vw;
+     left: 14%;
+     top: 30%;
+    }
+ 
+    #dif1Up, #dif1Down {
+     top: 34%;
+     left: 14%;
+    }
+ 
+    .dif1 {
+     font-size: 1.9vw;
+     left: 17%;
+     top: 33%;
+    }
+ }
+
+ @media only screen and (max-width: 700px) and (min-width: 500px) {
+    .testi {
+        width: 72%;
+    }
+  
+    .chartInfo {
+     font-size: 2.6vw;
+     left: 14%;
+     top: 16%;
+    }
+    
+     .ADS1 {
+     font-size: 2.8vw;
+     left: 14%;
+     top: 30%;
+    }
+ 
+    #dif1Up, #dif1Down {
+     top: 34%;
+     left: 14%;
+    }
+ 
+    .dif1 {
+     font-size: 2.5vw;
+     left: 18%;
+     top: 32.5%;
+    }
+ }
+
+ @media only screen and (max-width: 500px) and (min-width: 400px) {
+    .testi {
+        width: 63%;
+    }
+  
+    .chartInfo {
+     font-size: 3.5vw;
+     left: 19%;
+     top: 16.5%;
+    }
+    
+     .ADS1 {
+     font-size: 3.8vw;
+     left: 19%;
+     top: 30%;
+    }
+ 
+    #dif1Up, #dif1Down {
+     top: 34%;
+     left: 19%;
+    }
+ 
+    .dif1 {
+     font-size: 3.4vw;
+     left: 25%;
+     top: 32.7%;
+    }
+ }

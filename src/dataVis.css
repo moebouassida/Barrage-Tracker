@@ -2,25 +2,26 @@
 
 .visSection {
     border-top: 1px solid #70707063;
-    position: relative;
-    top: 4.3vw;
-    left: 5.1%;
+    margin-top: 4vw;
+    margin-left: 5vw;
     width: 94.4vw;
-    height: 50vw;
+    height: 46vw;
     background-color: #FFFCFC;
 }
 
 .dataHeader h1 {
     font-family: 'Public Sans', sans-serif;
     font-size: 1.4vw;
-    margin-left: 2.5vw;
+    position: absolute;
+    left: 8%;
+    top: 10%;
     color: #393939;
 }
 
 .locationSection {
     position: absolute;
     right: 3%;
-    top: 2.5%;
+    top: 12%;
 }
 
 .location {
@@ -43,11 +44,11 @@
 }
 
 #time1 {
-    top: 10%;
+    top: 18%;
 }
 
 #time2 {
-    top: 40%;
+    top: 44%;
 }
 
 .time {
@@ -64,6 +65,11 @@
     appearance: none;
 }
 
+.time option {
+    font-size: .7vw;
+    overflow: hidden;
+}
+
 #time1::after, #time2::after {
     content: '\1F783';
     position: absolute;
@@ -74,7 +80,233 @@
     cursor: pointer;
 }
 
-#mockChart {
-    position: absolute;
-    top: 3%;
+@media only screen and (max-width: 900px) and (min-width: 500px) {
+    .visSection {
+        margin-left: 8vw;
+        margin-top: 8vw;
+    }
 }
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .visSection {
+        margin-left: 10vw;
+        margin-top: 16vw;
+    }
+}
+
+@media only screen and (max-width: 1669px) and (min-width: 1500px) {
+    .location {
+        font-size: 1.4vw;
+        width: 11vw;
+    }
+
+    .location option {
+        font-size: 1.1vw;
+    }
+
+    .time option {
+        font-size: .9vw;
+        overflow: hidden;
+    }
+
+    .time {
+        font-size: .95vw;
+        width: 7vw;
+    }
+
+    .timeSection {
+        right: 3%;
+    }
+
+    .dataHeader h1 {
+        font-size: 1.7vw;
+        top: 9.5%;
+    }
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 1300px) {
+    .location {
+        font-size: 1.4vw;
+        width: 11vw;
+    }
+
+    .location option {
+        font-size: 1.1vw;
+    }
+
+    .time option {
+        font-size: .9vw;
+        overflow: hidden;
+    }
+
+    .time {
+        font-size: 1vw;
+        width: 7.5vw;
+    }
+
+    .dataHeader h1 {
+        font-size: 1.7vw;
+        top: 9.5%;
+    }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 1100px) {
+    .location {
+        font-size: 1.5vw;
+        width: 12vw;
+    }
+
+    .location option {
+        font-size: 1.2vw;
+    }
+
+    .time {
+        font-size: 1.1vw;
+        width: 8vw;
+    }
+
+    .time option {
+        font-size: 1vw;
+        overflow: hidden;
+    }
+
+    .timeSection {
+        right: 3%;
+    }
+
+    .dataHeader h1 {
+        font-size: 1.8vw;
+        top: 9.3%;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 900px) {
+    .location {
+        font-size: 1.7vw;
+        width: 13vw;
+    }
+
+    .location option {
+        font-size: 1.3vw;
+    }
+
+    .time option {
+        font-size: 1.1vw;
+        overflow: hidden;
+    }
+
+    .timeSection {
+        right: 3.3%;
+    }
+
+    .time {
+        font-size: 1.3vw;
+        width: 9.5vw;
+    }
+
+    .dataHeader h1 {
+        font-size: 2vw;
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+    .location {
+        font-size: 1.9vw;
+        width: 15vw;
+    }
+
+    .location option {
+        font-size: 1.6vw;
+    }
+
+    .time option {
+        font-size: 1.5vw;
+        overflow: hidden;
+    }
+
+    .timeSection {
+        right: 3.4%;
+    }
+
+    .time {
+        font-size: 1.5vw;
+        width: 10.5vw;
+    }
+
+    .dataHeader h1 {
+        font-size: 2.2vw;
+        top: 10%;
+        left: 12%;
+    }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+    .location {
+        font-size: 2.7vw;
+        width: 21vw;
+    }
+
+    .location option {
+        font-size: 2vw;
+    }
+
+    .time option {
+        font-size: 1.9vw;
+        overflow: hidden;
+    }
+
+    .timeSection {
+        right: 3.5%;
+    }
+
+    .time {
+        font-size: 2vw;
+        width: 14vw;
+    }
+
+    .dataHeader h1 {
+        font-size: 2.8vw;
+        top: 10%;
+        left: 12%;
+    }
+
+    #time1::after, #time2::after {
+        padding: 0 1.5vw;
+    }
+ }
+
+ @media only screen and (max-width: 500px) and (min-width: 400px) {
+    .location {
+        font-size: 3.5vw;
+        width: 27vw;
+    }
+
+    .location option {
+        font-size: 2.8vw;
+    }
+
+    .time option {
+        font-size: 2.7vw;
+        overflow: hidden;
+    }
+
+    .time {
+        font-size: 2.8vw;
+        width: 19.5vw;
+    }
+
+    .timeSection {
+        right: 3.5%;
+    }
+
+    .dataHeader h1 {
+        font-size: 4vw;
+        top: 10.5%;
+        left: 16%;
+    }
+
+    #time1::after, #time2::after {
+        padding: 0 1.9vw;
+    }
+ }

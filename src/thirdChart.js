@@ -17,7 +17,6 @@ import {
 } from 'chart.js'
 
 import { Bar } from 'react-chartjs-2'
-import { VscDiff } from 'react-icons/vsc'
 
 ChartJS.register(
     CategoryScale,
@@ -25,7 +24,7 @@ ChartJS.register(
     BarElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
 )
 
 
@@ -43,6 +42,8 @@ export default function ThirdChart() {
     if (day1 < 10) { day1 = '0' + day1 }
     if (month < 10) { month = '0' + month }
 
+    console.log(day1)
+
     useEffect(() => {
         axios.get(`http://localhost:3020/api/element/visualisationThree?date=${year + '-' + month + '-' + day1}`)
             .then((res) => {
@@ -57,11 +58,12 @@ export default function ThirdChart() {
     }, [])
 
     const data = {
-        labels: barragesData1Array.map(val => val.Nom_Fr),
+        labels: barragesData1Array.map(val => val.Nom_Fr) ,    
         datasets: [
             {
                 data: barragesData1Array.map(val => val.stock),
-                backgroundColor: '#7947F7',
+                backgroundColor: 'rgb(121, 71, 247, .7)',
+                borderRadius: 3
             },
         ],
     }
@@ -87,6 +89,7 @@ export default function ThirdChart() {
                 display: false
             }
         },
+        maintainAspectRatio: false 
     }
 
     return (
@@ -95,17 +98,17 @@ export default function ThirdChart() {
             <div className='testi3'>
                 <Bar data={data} options={options} />
             </div>
-            <h2 className='ADS'>{average1.toFixed(1)}mm</h2>
+            <h2 className='ADS3'>{average1.toFixed(2)}m³</h2>
             {
-                dif.toFixed(1) > 0 ?
+                dif.toFixed(1) >= 0 ?
                     <div>
-                        <IoChevronUpCircleOutline id='difUp' size='1.5vw' />
-                        <p className='dif' style={{color:'#13CD3C'}}>{dif.toFixed(1)}%</p> 
+                        <IoChevronUpCircleOutline id='dif3Up' size='1.5vw' />
+                        <p className='dif3' style={{color:'#13CD3C'}}>+{dif.toFixed(1)}%</p> 
                     </div>
                     :
                     <div>
-                        <IoChevronDownCircleOutline id='difDown' size='1.5vw' />
-                        <p className='dif' style={{color:'red'}}>{dif.toFixed(1)}%</p> 
+                        <IoChevronDownCircleOutline id='dif3Down' size='1.5vw' />
+                        <p className='dif3' style={{color:'red'}}>{dif.toFixed(1)}%</p> 
                     </div>
             }
 

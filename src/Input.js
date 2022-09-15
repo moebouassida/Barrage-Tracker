@@ -1,32 +1,41 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./Input.css";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+
 import axios from "./api/axios";
 import React, { useEffect, useRef, useState } from "react";
-import back_brg from "./assets/back_brg.png";
+import back_brg from "./img/back_brg.png";
 
 const getByDateAndName_url = "/api/element/getByDateAndName";
+const updateInput_url="/api/element/update";
 
 export default function Input() {
-//   const [element, setElement] = useState(null);
-const [initialValues,setInitialValues]=useState(null)
+  //   const [element, setElement] = useState(null);
+   const [allValues,setAllValues] = useState(null);
+
+ const handleChange = e => {
+    setAllValues({...allValues, [e.target.name]: e.target.value});
+    console.log('nawara');
+ }
+  
 
   useEffect(() => {
     axios
       .get(getByDateAndName_url, {
         params: {
           Nom_Fr: "mellegue",
-          Date: "2022-09-10 00:00:00",
+          Date: "2022-09-12 00:00:00",
         },
       })
       .then((response) => {
-        console.log(response.data);
-        const element=response.data;
+        const element = response.data;
         console.log(element);
-        if(element !== null){
-        setInitialValues({
+        if (element !== null) {
+          console.log('mizou');
+          console.log(element.Nom_Fr);
+
+          setAllValues({
+            _id: element._id,
             Nom_Fr: element.Nom_Fr,
             Nom_Ar: element.Nom_Ar,
             apports: element.apports,
@@ -49,320 +58,317 @@ const [initialValues,setInitialValues]=useState(null)
             Latitude: element.Latitude,
             Longitude: element.Longitude,
             Bassin_versant: element.Bassin_versant,
-          });}
-          else {setInitialValues({
-            Nom_Fr: '',
-            Nom_Ar:'',
-            apports:'',
-            id_barrage: '',
-            lachers: '',
-            stock: '',
-            cumul_mensuel_apports:'',
-            cumul_annuel_apports:'',
-            cumul_mensuel_lachers:'',
-            cumul_annuel_lachers:'',
-            moy_mois:'',
-            cumul_annee_prec:'',
-            moy_periode:'',
-            stock_annee_prec:'',
-            Cap_tot_act:'',
-            Cote:'',
-            Cap_tot_init:'',
-            fonctionnel:'',
-            Annee_prod:'',
-            Latitude:'',
-            Longitude:'',
-            Bassin_versant:'',
-          });}
-
- 
-        })
+          });
+         
+        } else {
+          setAllValues({
+          _id:"",
+           Nom_Fr: "",
+            Nom_Ar: "",
+            apports: "",
+            id_barrage: "",
+            lachers: "",
+            stock: "",
+            cumul_mensuel_apports: "",
+            cumul_annuel_apports: "",
+            cumul_mensuel_lachers: "",
+            cumul_annuel_lachers: "",
+            moy_mois: "",
+            cumul_annee_prec: "",
+            moy_periode: "",
+            stock_annee_prec: "",
+            Cap_tot_act: "",
+            Cote: "",
+            Cap_tot_init: "",
+            fonctionnel: "",
+            Annee_prod: "",
+            Latitude: "",
+            Longitude: "",
+            Bassin_versant: "",
+          });
+        }
+      })
       .catch((error) => {
         console.log("lmochkel fel connection");
         console.log(error);
       });
   }, []);
- 
- 
- 
- 
- const formik=useFormik({initialValues,validationSchema: Yup.object({
-    Nom_Fr: Yup.string()
-      .max(10, "Must be 4 caracters or less.")
-      .required("required *"),
-    Nom_Ar: Yup.string()
-      .max(10, "Must be 4 caracters or less.")
-      .required("required *"),
-    apports: Yup.string().required("required *"),
-    id_barrage: Yup.string().required("required *"),
-    lachers: Yup.string().required("required *"),
-    stock: Yup.string().required("required *"),
-    cumul_mensuel_apports: Yup.string().required("required *"),
-    cumul_annuel_apports: Yup.string().required("required *"),
-    cumul_mensuel_lachers: Yup.string().required("required *"),
-    cumul_annuel_lachers: Yup.string().required("required *"),
-    moy_mois: Yup.string().required("required *"),
-    cumul_annee_prec: Yup.string().required("required *"),
-    moy_periode: Yup.string().required("required *"),
-    stock_annee_prec: Yup.string().required("required *"),
-    Cap_tot_act: Yup.string().required("required *"),
-    Cote: Yup.string().required("required *"),
-    Cap_tot_init: Yup.string().required("required *"),
-    fonctionnel: Yup.string().required("required *"),
-    Annee_prod: Yup.string().required("required *"),
-    Latitude: Yup.string().required("required *"),
-    Longitude: Yup.string().required("required *"),
-    Bassin_versant: Yup.string().required("required *"),
-  }),
-  onSubmit: (values) => {
-    console.log(values);
-  },
-});
-console.log(initialValues);
+
+  const updateInputs= (id,values) => {
+    axios
+      .put(updateInput_url, 
+         {
+          _id: id,
+          values,
+          
+        },
+      )
+      .then((response) => {;
+       console.log(response);
+       console.log('samir');
+      //  console.log(id);
+      //  console.log(values);
+       
+       
+      })
+      .catch((error) => {
+        console.log("lmochkel fel connection2");
+        console.log(error.message);
+      });
+    
+  };
+  
+  
   const navigate = useNavigate();
-  if (initialValues===null){
-  return (null);}
- return(
+  if (allValues === null) {
+    return null;
+  }
+  console.log('moez');
+  console.log(allValues._id);
+  return (
     <div>
       <Navbar where={"Edit"} logout_icon={false} />
-      
-     
-        <form action="#" id="form" onSubmit={formik.handleSubmit} className="form_input">
-        <div className="input1">
-          <input className='input_brg'
-            id="Nom_Fr"
-            value={(formik.values)?formik.values.Nom_Fr:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+
+      <div className="line">
+        <div className="line1"></div>
+        <div className="line2"></div>
+      </div>
+      <form
+        action="#"
+        id="form"
+       
+        className="form_input"
+      >
+        <div className="input">
+          <input
+            className="input_brg"
+            name="Nom_Fr"
+            value={allValues.Nom_Fr  }
+            onChange={ handleChange}
             type="text"
             placeholder="Nom Français"
             autoComplete="off"
           />
-          <input className='input_brg'
-            id="Nom_Ar"
-            value={(formik.values)?formik.values.Nom_Ar:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg"
+            name="Nom_Ar"
+            value={allValues.Nom_Ar }
+            onChange={ handleChange}
             type="text"
             placeholder="Nom Arabe"
             autoComplete="off"
           />
-          <input className='input_brg'
-            id="apports"
-            value={(formik.values)?formik.values.apports:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg"
+            name="apports"
+            value={allValues.apports}
+            onChange={handleChange}
             type="text"
             placeholder="Apports"
             autoComplete="off"
           />
-          </div>
-          <div className="input1">
-          <input className='input_brg'
-            id="id_barrage"
-            value={(formik.values)?formik.values.id_barrage:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+        </div>
+        <div className="input">
+          <input
+            className="input_brg"
+            name="id_barrage"
+            value={allValues.id_barrage }
+            onChange={ handleChange}
             type="text"
-            placeholder="id_barrage"
+            placeholder="ID Barrage"
             autoComplete="off"
           />
-          <input className='input_brg'
-            id="lachers"
-            value={(formik.values)?formik.values.lachers:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg"
+            name="lachers"
+            value={allValues.lachers}
+            onChange={ handleChange}
             type="text"
-            placeholder="lachers"
+            placeholder="Lachers"
             autoComplete="off"
           />
-          <input className='input_brg'
-            id="stock"
-            value={(formik.values)?formik.values.stock:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg"
+            name="stock"
+            value={allValues.stock }
+            onChange={ handleChange}
             type="text"
-            placeholder="stock"
+            placeholder="Stock"
             autoComplete="off"
           />
-          </div>
-          <div className="input1">
-         
-          <input className='input_brg'
-            id="cumul_mensuel_apports"
-            value={(formik.values)?formik.values.cumul_mensuel_apports:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+        </div>
+        <div className="input">
+          <input
+            className="input_brg1"
+            name="cumul_mensuel_apports"
+            value={allValues.cumul_mensuel_apports}
+            onChange={ handleChange}
+           
             type="text"
-            placeholder="cumul_mensuel_apports"
+            placeholder="Cumul Mensuel Apports"
             autoComplete="off"
           />
-          <input className='input_brg'
-            id="cumul_annuel_apports"
-            value={(formik.values)?formik.values.cumul_annuel_apports:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg1"
+            name="cumul_annuel_apports"
+            value={allValues.cumul_annuel_apports}
+            onChange={ handleChange}
             type="text"
-            placeholder="cumul_annuel_apports"
+            placeholder="Cumul Annuel Apports"
             autoComplete="off"
           />
-         </div>
-          <div className="input1">
-          <input className='input_brg'
-            id="cumul_mensuel_lachers"
-            value={(formik.values)?formik.values.cumul_mensuel_lachers:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+        </div>
+        <div className="input">
+          <input
+            className="input_brg1"
+            name="cumul_mensuel_lachers"
+            value={allValues.cumul_mensuel_lachers}
+            onChange={ handleChange}
             type="text"
-            placeholder="cumul_mensuel_lachers"
+            placeholder="Cumul Mensuel Lachers"
             autoComplete="off"
           />
-          <input className='input_brg'
-            id="cumul_annuel_lachers"
-            value={(formik.values)?formik.values.cumul_annuel_lachers:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg1"
+            name="cumul_annuel_lachers"
+            value={allValues.cumul_annuel_lachers}
+            onChange={ handleChange}
             type="text"
-            placeholder="cumul_annuel_lachers"
+            placeholder="Cumul Annuel Lachers"
             autoComplete="off"
           />
-          </div>
-          <div className="input1">
-          <input className='input_brg'
-            id="moy_mois"
-            value={(formik.values)?formik.values.moy_mois:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+        </div>
+        <div className="input">
+          <input
+            className="input_brg1"
+            name="moy_mois"
+            value={allValues.moy_mois}
+            onChange={ handleChange}
             type="text"
-            placeholder="moy_mois"
-            autoComplete="off"
-          />
-
-          <input className='input_brg'
-            id="cumul_annee_prec"
-            value={(formik.values)?formik.values.cumul_annee_prec:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            type="text"
-            placeholder="cumul_annee_prec"
-            autoComplete="off"
-          />
-         </div>
-          <div className="input1">
-
-          <input className='input_brg'
-            id="moy_periode"
-            value={(formik.values)?formik.values.moy_periodes:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            type="text"
-            placeholder="moy_periode"
-            autoComplete="off"
-          />
-          </div>
-          <div className="input1">
-
-          <input className='input_brg'
-            id="stock_annee_prec"
-            value={(formik.values)?formik.values.stock_annee_prec:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            type="text"
-            placeholder="stock_annee_prec"
+            placeholder="Moyenne Mois"
             autoComplete="off"
           />
 
-          <input className='input_brg'
-            id="Cap_tot_act"
-            value={(formik.values)?formik.values.Cap_tot_act:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg1"
+            name="cumul_annee_prec"
+            value={allValues.cumul_annee_prec}
+            onChange={ handleChange}
             type="text"
-            placeholder="Cap_tot_act"
+            placeholder="Cumul Année Precédente"
+            autoComplete="off"
+          />
+        </div>
+        <div className="input">
+          <input
+            className="input_brg1"
+            name="moy_periode"
+            value={allValues.moy_periodes}
+            onChange={ handleChange}
+            type="text"
+            placeholder="Moyenne Période"
             autoComplete="off"
           />
 
-          <input className='input_brg'
-            id="Cote"
-            value={(formik.values)?formik.values.Cote:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg1"
+            name="stock_annee_prec"
+            value={allValues.stock_annee_prec}
+            onChange={ handleChange}
+            type="text"
+            placeholder="Stock Année Precédente"
+            autoComplete="off"
+          />
+        </div>
+        <div className="input">
+          <input
+            className="input_brg2"
+            name="Cap_tot_act"
+            value={allValues.Cap_tot_act}
+            onChange={ handleChange}
+            type="text"
+            placeholder="Cap Tot Act"
+            autoComplete="off"
+          />
+
+          <input
+            className="input_brg2"
+            name="Cote"
+            value={allValues.Cote}
+            onChange={ handleChange}
             type="text"
             placeholder="Cote"
             autoComplete="off"
           />
-</div>
-<div className="input1">
-          <input className='input_brg'
-            id="Cap_tot_init"
-            value={(formik.values)?formik.values.Cap_tot_init:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+
+          <input
+            className="input_brg2"
+            name="Cap_tot_init"
+            value={allValues.Cap_tot_init}
+            onChange={ handleChange}
             type="text"
-            placeholder="Cap_tot_init"
+            placeholder="Cap Tot Init"
             autoComplete="off"
           />
-
-          <input className='input_brg'
-            id="fonctionnel"
-            value={(formik.values)?formik.values.fonctionnel:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg2"
+            name="fonctionnel"
+            value={allValues.fonctionnel}
+            onChange={ handleChange}
             type="text"
-            placeholder="fonctionnel"
+            placeholder="Fonctionnel"
             autoComplete="off"
           />
-
-          <input className='input_brg'
-            id="Annee_prod"
-            value={(formik.values)?formik.values.Annee_prod:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+        </div>
+        <div className="input">
+          <input
+            className="input_brg3"
+            name="Annee_prod"
+            value={allValues.Annee_prod}
+            onChange={ handleChange}
             type="text"
-            placeholder="Annee_prod"
+            placeholder="Année Prod"
             autoComplete="off"
           />
-         </div>
-          <div className="input1">
-
-          <input className='input_brg'
-            id="Latitude"
-            value={(formik.values)?formik.values.Latitude:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg3"
+            name="Latitude"
+            value={allValues.Latitude}
+            onChange={ handleChange}
             type="text"
             placeholder="Latitude"
             autoComplete="off"
           />
-
-          <input className='input_brg'
-            id="Longitude"
-            value={(formik.values)?formik.values.Longitude:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+        </div>
+        <div className="input">
+          <input
+            className="input_brg3"
+            name="Longitude"
+            value={allValues.Longitude}
+            onChange={ handleChange}
             type="text"
             placeholder="Longitude"
             autoComplete="off"
           />
 
-          <input className='input_brg'
-            id="Bassin_versant"
-            value={(formik.values)?formik.values.Bassin_versant:null}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+          <input
+            className="input_brg3"
+            name="Bassin_versant"
+            value={allValues.Bassin_versant}
+            onChange={ handleChange}
             type="text"
-            placeholder="Bassin_versant"
+            placeholder="Bassin Versant"
             autoComplete="off"
           />
-          </div>
-         
-        </form>
-       
-        <img className='img_brg' src={back_brg}></img>
+        </div>
+        <button className="btn" onClick={() => {
+           updateInputs(allValues._id,allValues);
+           console.log('nouss');
+            console.log(allValues._id);
+          }}>Enregistrer</button>
+      </form>
 
-      <button
-       className="btn"
-      >Enregistrer</button>
-    </div>);
-  ;
+      <img className="img_brg" src={back_brg}></img>
+    </div>
+  );
 }

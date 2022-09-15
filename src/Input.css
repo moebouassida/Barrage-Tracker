@@ -1,51 +1,198 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Poppins&display=swap');
+@import url("https://use.typekit.net/igh0ziu.css");
+.line{
+    display: flex;
+}
+.line1{
+    
+    margin-top: 7vh;
+    margin-bottom: 1.5vh;
+    width:5.1%;
+}
+.line2{
+    border-bottom: solid 2px #EFECEC;
+    margin-top: 7vh;
+    margin-bottom: 1.5vh;
+    width: 94.9%;
+}
+@media only screen and (max-width: 900px) {
+    .line1{
+    
+        margin-top: 7vh;
+    margin-bottom: 0.5vh;
+        width:9.2%;
+    }
+    .line2{
+        border-bottom: solid 2px #EFECEC;
+        margin-top: 7vh;
+    margin-bottom: 0.5vh;
+        width: 90%;
+    }
+  }
 .img_brg{
     position: absolute;
     bottom:0;
     right:0;
-    width: auto;
-    height:80%; 
+    width: 35%;
+    height:87%; 
    
 }
+@media only screen and (max-width: 900px) {
+    .img_brg {
+      width: 70%;
+      height:70%;
+    }
+  }
 .input_brg{
-    color: #828081;
+    color: #6E6E6E;
     background-color:#EAEAEA;
      border:none;
-    height: 55px;
-    width: 20%;
-    margin-top: 2vh;
+    height: 50px;
+    width: 20vw;
+    margin-top: 1vh;
     margin-right: 0.4vw;
     border-radius: 10px;
-    padding-left: 20px; 
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;   
+  font-family: montserrat, sans-serif;
+font-weight: 700;
+font-style: normal;
+    font-size: 15px; 
+    text-align: center;
+    border:solid #6E6E6E 2px;
 }
+.input_brg1{
+    color: #6E6E6E;
+    background-color:#EAEAEA;
+     border:none;
+    height: 50px;
+    width: 27vw;
+    margin-top: 1vh;
+    margin-right: 0.4vw;
+    border-radius: 10px;
+  font-family: montserrat, sans-serif;
+font-weight: 700;
+font-style: normal;
+    font-size: 15px; 
+    text-align: center;
+    border:solid #6E6E6E 2px;
+}
+.input_brg2{
+    color: #6E6E6E;
+    background-color:#EAEAEA;
+     border:none;
+    height: 50px;
+    width: 12.5vw;
+    margin-top: 1vh;
+    margin-right: 0.4vw;
+    border-radius: 10px;
+  font-family: montserrat, sans-serif;
+font-weight: 700;
+font-style: normal;
+    font-size: 15px; 
+    text-align: center;
+    border:solid #6E6E6E 2px;
+}
+.input_brg3{
+    color: #6E6E6E;
+    background-color:#EAEAEA;
+     border:none;
+    height: 50px;
+    width: 24vw;
+    margin-top: 1vh;
+    margin-right: 0.4vw;
+    border-radius: 10px;
+  font-family: montserrat, sans-serif;
+font-weight: 700;
+font-style: normal;
+    font-size: 15px; 
+    text-align: center;
+    border:solid #6E6E6E 2px;
+}
+.input{
+    display:flex;
+    justify-content: left;
+    margin-left: 10vw;
+}
+@media only screen and (max-width: 900px) {
+    .input_brg {
+        height: 53px;
+        width: 30vw;
+        font-size:2.3vw;
+    }
+    .input_brg1 {
+        height: 53px;
+        width: 37vw;   
+        font-size:2.3vw;
+    }
+    .input_brg2 {
+        height: 53px;
+        width: 17vw;
+        
+        font-size:2.3vw;
+    }
+    .input_brg3 {
+        height: 53px;
+        width: 30vw;
+        font-size:2.3vw;
+    }
+    .input{
+        margin-left: 13vw;
+    }
+
+  }
 .form_input{
     display:flex;
     flex-direction:column;
+    justify-content:center;
+   
    
 
 }
-.input1{
-    display:flex;
-    justify-content: center;
-    margin-right: 15vw;
 
-}
+
+@media only screen and (max-width: 900px) {
+    .form_input{
+      position: relative;
+      z-index: 90;
+    }
+  }
+
+/* .input1.input_brg{
+    height: 70px;
+    width: 400vw;  
+    
+} */
+
 .btn{
     border:none;
-    width: 250px; 
-    height: 70px;
+    width: 25vw; 
+    height:8vh;
     border: none;
     border-radius: 7px;
     text-align: center;
-    margin-top: 30px;
-    margin-left: 410px;
+    margin-top: 1.5vh;
+   margin-left: 30vw; 
     font-family: 'Gilroy ExtraBold';
     color:white;
-   background-color:#FF6647 ;
-   font-size: 3vh;
+   background: #ff9966;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   font-size: 20px;
    cursor:pointer;
 
 }
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    width: 24.8vw; 
+    height:7.9vh;
+   
+}
+@media only screen and (max-width:  800px) {
+    .btn{
+        width: 30vw; 
+        height:8vh;
+        font-size: 3.5vw;
+        
+    }
+  }
+  /* input:hover{
+    border:solid #6E6E6E 3px;
+} */
