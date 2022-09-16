@@ -17,3 +17,55 @@
     font-family: 'Public Sans', sans-serif;
     color: #1B2767;
 }
+
+@media only screen and (max-width: 1500px) and (min-width: 1300px) {
+    .chartInfo2 {
+        font-size: 1.3vw;
+    }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 1100px) {
+    .chartInfo2 {
+        font-size: 1.4vw;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 900px) {
+    .chartInfo2 {
+        font-size: 1.6vw;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+    .chartInfo2 {
+        font-size: 1.9vw;
+        left: 14%;
+    }
+
+    .testi2 {
+        width: 85.5%;
+    }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+    .chartInfo2 {
+        font-size: 2.6vw;
+        left: 14%;
+    }
+
+    .testi2 {
+        width: 85.5%;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .chartInfo2 {
+        font-size: 3.5vw;
+        left: 19%;
+        top: 42.5%;
+    }
+
+    .testi2 {
+        width: 82%;
+    }
+}

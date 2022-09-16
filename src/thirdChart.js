@@ -42,7 +42,6 @@ export default function ThirdChart() {
     if (day1 < 10) { day1 = '0' + day1 }
     if (month < 10) { month = '0' + month }
 
-    console.log(day1)
 
     useEffect(() => {
         axios.get(`http://localhost:3020/api/element/visualisationThree?date=${year + '-' + month + '-' + day1}`)
@@ -58,7 +57,7 @@ export default function ThirdChart() {
     }, [])
 
     const data = {
-        labels: barragesData1Array.map(val => val.Nom_Fr) ,    
+        labels: barragesData1Array.map(val => val.Nom_Fr),
         datasets: [
             {
                 data: barragesData1Array.map(val => val.stock),
@@ -89,7 +88,7 @@ export default function ThirdChart() {
                 display: false
             }
         },
-        maintainAspectRatio: false 
+        maintainAspectRatio: false
     }
 
     return (
@@ -100,16 +99,22 @@ export default function ThirdChart() {
             </div>
             <h2 className='ADS3'>{average1.toFixed(2)}m³</h2>
             {
-                dif.toFixed(1) >= 0 ?
+                barragesData1Array.length === 0 ?
                     <div>
-                        <IoChevronUpCircleOutline id='dif3Up' size='1.5vw' />
-                        <p className='dif3' style={{color:'#13CD3C'}}>+{dif.toFixed(1)}%</p> 
+                        <IoChevronUpCircleOutline id='dif3Up' size='26px' />
+                        <p className='dif3' style={{ color: '#13CD3C' }}>0.0%</p>
                     </div>
                     :
-                    <div>
-                        <IoChevronDownCircleOutline id='dif3Down' size='1.5vw' />
-                        <p className='dif3' style={{color:'red'}}>{dif.toFixed(1)}%</p> 
-                    </div>
+                    dif.toFixed(1) > 0 ?
+                        <div>
+                            <IoChevronUpCircleOutline id='dif3Up' size='26px' />
+                            <p className='dif3' style={{ color: '#13CD3C' }}>+{dif.toFixed(1)}%</p>
+                        </div>
+                        :
+                        <div>
+                            <IoChevronDownCircleOutline id='dif3Down' size='26px' />
+                            <p className='dif3' style={{ color: 'red' }}>{dif.toFixed(1)}%</p>
+                        </div>
             }
 
         </div>

@@ -1,18 +1,18 @@
 @font-face {
     font-family: "Gilory";
     src: local("Gilory"), url("../src/fonts/Gilroy-Light.otf") format("truetype");
-  }
+}
 
 @import url(//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold);
 
 .userSection {
     border-top: 1px solid #70707063;
     position: relative;
-    left: 5.1%;
+    left: 5.2%;
     width: 94.4vw;
     height: 100vw;
     background-color: #FFFCFC;
-    margin-top: 2%;
+    margin-top: 4%;
 }
 
 #pic {
@@ -25,9 +25,9 @@
 }
 
 .userSection h1 {
-    font-family: "Gilroy ExtraBold";
+    font-family: 'Gilory';
     color: #2E384D;
-    font-size: 4vw;
+    font-size: 3.5vw;
 }
 
 .p-user {
@@ -42,7 +42,6 @@
     border-radius: 6px;
     border: 1px solid #E0E7FF;
     outline: none;
-    font-size: 1vw;
 }
 
 .form {
@@ -50,40 +49,39 @@
     left: 10%;
     top: 5%;
 }
-.form input
-{
+
+.form input {
     font-family: 'gilroy';
-    font-size: 0.8vw;
+    font-size: .8vw;
 }
 
 #contactAdmin {
     color: #3a69e9;
     font-weight: bold;
 }
-#contactAdmin:hover
-{
+
+#contactAdmin:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.error-user
-{
+.error-user {
     margin-top: 1%;
     margin-left: 1%;
     color: red;
-    font-size: 8px;
+    font-size: .7vw;
     font-family: 'Gilroy ExtraBold';
 }
-.auth-error
-{
+
+.auth-error {
     color: red;
     font-size: 1vw;
     font-family: 'Gilroy ExtraBold';
     margin-left: 2vw;
     position: relative;
 }
-.login-error
-{
+
+.login-error {
     color: red;
     font-size: 1vw;
     font-family: 'Gilroy ExtraBold';
@@ -110,8 +108,441 @@
     border-radius: 6px;
     margin-top: 1.5vw;
 }
-.connectButton:hover
-{
+
+.connectButton:hover {
     cursor: pointer;
     opacity: 0.8;
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 1669px) {
+    #pic {
+        top: 0vw;
+    }
+}
+
+@media only screen and (max-width: 1669px) and (min-width: 1470px) {
+    #pic {
+        position: relative;
+        top: 2vw;
+        right: 1%;
+        float: right;
+    }
+
+    .userSection input {
+        font-size: 1.1vw;
+    }
+}
+
+@media only screen and (max-width: 1470px) and (min-width: 1320px) {
+    #pic {
+        position: relative;
+        top: 3vw;
+        right: 1%;
+        float: right;
+        width: 46%;
+    }
+
+    .userSection input {
+        font-size: 1.3vw;
+    }
+
+    .userSection h1 {
+        font-size: 3.3vw;
+    }
+
+    .userSection p {
+        font-size: 1.3vw;
+    }
+
+    #mdp {
+        font-size: .85vw;
+    }
+
+    .connectButton {
+        font-size: 1.4vw;
+    }
+}
+
+@media only screen and (max-width: 1320px) and (min-width: 1220px) {
+    #pic {
+        position: relative;
+        top: 6vw;
+        right: 1%;
+        float: right;
+        width: 47%;
+    }
+
+    .userSection input {
+        width: 24vw;
+        font-size: 1.5vw;
+    }
+
+    .form {
+        top: 10%;
+    }
+
+    .userSection h1 {
+        font-size: 3.5vw;
+    }
+
+    .userSection p {
+        font-size: 1.4vw;
+    }
+
+    #mdp {
+        font-size: .95vw;
+    }
+
+    .connectButton {
+        font-size: 1.5vw;
+        width: 26vw;
+    }
+}
+
+@media only screen and (max-width: 1220px) and (min-width: 1100px) {
+    .userSection {
+        height: 150vw;
+    }
+
+    #pic {
+        position: relative;
+        top: 7vw;
+        right: 1%;
+        width: 48%;
+    }
+
+    .userSection input {
+        width: 24vw;
+        padding: 1.5vw;
+        font-size: 1.6vw;
+    }
+
+    .form {
+        top: 9%;
+    }
+
+    .userSection h1 {
+        font-size: 3.5vw;
+    }
+
+    .userSection p {
+        font-size: 1.4vw;
+    }
+
+    #mdp {
+        font-size: 1vw;
+    }
+
+    .connectButton {
+        font-size: 1.5vw;
+        width: 27vw;
+        padding: 1.5vw;
+    }
+
+    .form ::placeholder {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 900px) {
+    .userSection {
+        height: 200vw;
+    }
+
+    #pic {
+        position: relative;
+        top: 5vw;
+        right: 1%;
+        float: right;
+        width: 53%;
+    }
+
+    .userSection input {
+        width: 28vw;
+        padding: 1.8vw;
+        font-size: 2vw;
+    }
+
+    .form {
+        top: 6%;
+        left: 7%;
+    }
+
+    .userSection h1 {
+        font-size: 3.9vw;
+    }
+
+    .userSection p {
+        font-size: 1.8vw;
+    }
+
+    #mdp {
+        font-size: 1.2vw;
+    }
+
+    .connectButton {
+        font-size: 1.5vw;
+        width: 31vw;
+        padding: 1.8vw;
+    }
+
+    .form ::placeholder {
+        font-size: 1.1vw;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 504px) {
+    .userSection {
+        left: 8.3%;
+    }
+}
+
+@media only screen and (max-width: 504px) and (min-width: 500px) {
+    .userSection {
+        left: 8.5%;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .userSection {
+        left: 10.6%;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 800px) {
+    .userSection {
+        height: 200vw;
+    }
+
+    #pic {
+        position: relative;
+        top: 10vw;
+        right: 3%;
+        float: right;
+        width: 55%;
+    }
+
+    .userSection input {
+        width: 26vw;
+        padding: 2vw;
+        font-size: 2vw;
+    }
+
+    .form {
+        top: 7%;
+        left: 6%;
+    }
+
+    .userSection h1 {
+        font-size: 4.2vw;
+    }
+
+    .userSection p {
+        font-size: 1.9vw;
+    }
+
+    #mdp {
+        font-size: 1.35vw;
+    }
+
+    .connectButton {
+        font-size: 1.9vw;
+        width: 29.8vw;
+        padding: 1.8vw;
+    }
+
+    .form ::placeholder {
+        font-size: 1.3vw;
+    }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 660px) {
+    .userSection {
+        height: 200vw;
+    }
+
+    #pic {
+        position: relative;
+        top: 2vw;
+        right: 24%;
+        width: 55%;
+        height: 26%;
+    }
+
+    .userSection input {
+        width: 41.5vw;
+        padding: 2.4vw;
+        font-size: 2.5vw;
+    }
+
+    .form {
+        top: 28%;
+        left: 24%;
+    }
+
+    .userSection h1 {
+        font-size: 4.8vw;
+    }
+
+    .userSection p {
+        font-size: 2.4vw;
+    }
+
+    #mdp {
+        font-size: 1.7vw;
+    }
+
+    .connectButton {
+        font-size: 2.3vw;
+        width: 46.5vw;
+        padding: 2.2vw;
+    }
+
+    .form ::placeholder {
+        font-size: 1.5vw;
+    }
+}
+
+@media only screen and (max-width: 660px) and (min-width: 570px) {
+    .userSection {
+        height: 200vw;
+    }
+
+    .userSection {
+        height: 200vw;
+    }
+
+    #pic {
+        position: relative;
+        top: 6vw;
+        right: 24%;
+        width: 55%;
+        height: 26%;
+    }
+
+    .userSection input {
+        width: 41.5vw;
+        padding: 3vw;
+        font-size: 2.6vw;
+    }
+
+    .form {
+        top: 33%;
+        left: 24%;
+    }
+
+    .userSection h1 {
+        font-size: 5vw;
+    }
+
+    .userSection p {
+        font-size: 2.5vw;
+    }
+
+    #mdp {
+        font-size: 2vw;
+    }
+
+    .connectButton {
+        font-size: 2.5vw;
+        width: 46.5vw;
+        padding: 2.4vw;
+    }
+
+    .form ::placeholder {
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (max-width: 570px) and (min-width: 500px) {
+    .userSection {
+        height: 200vw;
+    }
+
+    .userSection {
+        height: 200vw;
+    }
+
+    #pic {
+        position: relative;
+        top: 10vw;
+        right: 17%;
+        width: 70%;
+        height: 30%;
+    }
+
+    .userSection input {
+        width: 51vw;
+        padding: 4vw;
+        font-size: 3vw;
+    }
+
+    .form {
+        top: 38%;
+        left: 17%;
+    }
+
+    .userSection h1 {
+        font-size: 6vw;
+    }
+
+    .userSection p {
+        font-size: 3vw;
+    }
+
+    #mdp {
+        font-size: 2.1vw;
+    }
+
+    .connectButton {
+        font-size: 3vw;
+        width: 59vw;
+        padding: 3vw;
+    }
+
+    .form ::placeholder {
+        font-size: 2.5vw;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .userSection {
+        height: 200vw;
+    }
+
+    #pic {
+        position: relative;
+        top: 10vw;
+        right: 13%;
+        width: 80%;
+        height: 40%;
+    }
+
+    .userSection input {
+        width: 57vw;
+        padding: 5vw;
+    }
+
+    .form {
+        top: 47%;
+        left: 11%;
+    }
+
+    .userSection h1 {
+        font-size: 6vw;
+    }
+
+    .userSection p {
+        font-size: 3vw;
+    }
+
+    #mdp {
+        font-size: 2.5vw;
+    }
+
+    .connectButton {
+        font-size: 3.8vw;
+        width: 67vw;
+        padding: 4vw;
+    }
 }

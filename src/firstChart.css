@@ -30,14 +30,14 @@
 
 #dif1Down {
     position: absolute;
-    left: 9%;
+    left: 8.9%;
     top: 34%;
     color: red;
 }
 
 #dif1Up {
     position: absolute;
-    left: 9%;
+    left: 8.9%;
     top: 34%;
     color: #13CD3C;
 }
@@ -47,8 +47,8 @@
     font-size: 1vw;
     font-weight: bolder;
     position: absolute;
-    left: 10.7%;
-    top: 32.4%;
+    left: 10.6%;
+    top: 32.2%;
 }
 
 
@@ -161,14 +161,14 @@
     }
  
     #dif1Up, #dif1Down {
-     top: 34%;
-     left: 14%;
+     top: 35%;
+     left: 13.5%;
     }
  
     .dif1 {
      font-size: 2.5vw;
      left: 18%;
-     top: 32.5%;
+     top: 33.5%;
     }
  }
 
@@ -190,13 +190,13 @@
     }
  
     #dif1Up, #dif1Down {
-     top: 34%;
+     top: 35%;
      left: 19%;
     }
  
     .dif1 {
      font-size: 3.4vw;
      left: 25%;
-     top: 32.7%;
+     top: 33.5%;
     }
  }

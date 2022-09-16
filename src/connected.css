@@ -1,8 +1,5 @@
-@font-face {
-    font-family: "Gilory";
-    src: local("Gilory"), url("../src/fonts/Gilroy-Light.otf") format("truetype");
-  }
-  @import url(//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold);
+@import url(//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold);
+
 .connectedSection {
     border-top: 1px solid #70707063;
     position: relative;

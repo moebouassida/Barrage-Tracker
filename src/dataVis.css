@@ -82,14 +82,14 @@
 
 @media only screen and (max-width: 900px) and (min-width: 500px) {
     .visSection {
-        margin-left: 8vw;
+        margin-left: 5vw;
         margin-top: 8vw;
     }
 }
 
 @media only screen and (max-width: 500px) and (min-width: 400px) {
     .visSection {
-        margin-left: 10vw;
+        margin-left: 5vw;
         margin-top: 16vw;
     }
 }

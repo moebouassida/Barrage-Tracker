@@ -50,3 +50,164 @@
     left: 10.7%;
     bottom: 5.5%;
 }
+
+
+@media only screen and (max-width: 1500px) and (min-width: 1300px) {
+    .chartInfo3 {
+        font-size: 1.3vw;
+    }
+
+    .ADS3 {
+        font-size: 1.4vw;
+    }
+
+    #dif3Up,
+    #dif3Down {
+        bottom: 5.5%;
+    }
+
+    .dif3 {
+        font-size: 1.2vw;
+        left: 11.3%;
+        bottom: 4%;
+    }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 1100px) {
+    .chartInfo3 {
+        font-size: 1.4vw;
+    }
+
+    .ADS3 {
+        font-size: 1.5vw;
+    }
+
+    #dif3Up,
+    #dif3Down {
+        bottom: 5.5%;
+    }
+
+    .dif3 {
+        font-size: 1.3vw;
+        left: 11.3%;
+        bottom: 4%;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 900px) {
+
+    .chartInfo3 {
+        font-size: 1.6vw;
+    }
+
+    .ADS3 {
+        font-size: 1.8vw;
+    }
+
+    #dif3Up,
+    #dif3Down {
+        bottom: 5.5%;
+    }
+
+    .dif3 {
+        font-size: 1.6vw;
+        left: 12%;
+        bottom: 4%;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+    .testi3 {
+        width: 65%;
+        left: 33%;
+        height: 30%;
+    }
+
+    .chartInfo3 {
+        font-size: 1.9vw;
+        left: 14%;
+        bottom: 24%;
+    }
+
+    .ADS3 {
+        font-size: 2.1vw;
+        left: 14%;
+        bottom: 10%;
+    }
+
+    #dif3Up,
+    #dif3Down {
+        bottom: 7%;
+        left: 13.8%;
+    }
+
+    .dif3 {
+        font-size: 1.9vw;
+        left: 17.5%;
+        bottom: 5.5%;
+    }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+    .testi3 {
+        width: 62%;
+        left: 30%;
+        height: 30%;
+    }
+
+    .chartInfo3 {
+        font-size: 2.6vw;
+        left: 14%;
+        bottom: 24%;
+    }
+
+    .ADS3 {
+        font-size: 2.8vw;
+        left: 14%;
+        bottom: 10%;
+    }
+
+    #dif3Up,
+    #dif3Down {
+        bottom: 7%;
+        left: 13.8%;
+    }
+
+    .dif3 {
+        font-size: 2.5vw;
+        left: 18.5%;
+        bottom: 5.5%;
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .testi3 {
+        width: 64%;
+        left: 33%;
+        height: 31%;
+    }
+
+    .chartInfo3 {
+        font-size: 3.5vw;
+        left: 19%;
+        bottom: 26%;
+    }
+
+    .ADS3 {
+        font-size: 3.8vw;
+        left: 19%;
+        bottom: 10%;
+    }
+
+    #dif3Up,
+    #dif3Down {
+        bottom: 8%;
+        left: 18.5%;
+    }
+
+    .dif3 {
+        font-size: 3.4vw;
+        left: 25%;
+        bottom: 6.8%;
+    }
+}

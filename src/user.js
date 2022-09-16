@@ -93,7 +93,6 @@ function login(values,setBool,navigate,setValue) {
       localStorage.setItem('token',res.data.token);
       localStorage.setItem('username',res.data.username);
       setValue(true);
-    console.log(res.data)
     if (res.data.message==="Valid password")
     {
       navigate('/account')

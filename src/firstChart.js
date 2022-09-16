@@ -71,13 +71,11 @@ export default function FirstChart(props) {
             })
     }, [])
 
-
-
     const data = {
         labels: apportDataArray.map(data => data.Date.substr(5, 5)),
         datasets: [
             {
-                data: apportDataArray.map(data => data.Apports),
+                data: apportDataArray.map(data => data.apports),
                 lineTension: .5,
                 fill:true,
                 borderColor: 'rgb(255, 99, 132)',
@@ -121,17 +119,16 @@ export default function FirstChart(props) {
     const averageString1 = String(average.toFixed(1))
     const averageString2 = String(average.toFixed(2))
     const averageString3 = String(average.toFixed(3))
-    console.log(averageString1.slice(-1))
 
-    const apports1 = data1.map(val => val.Apports)
+    const apports1 = data1.map(val => val.apports)
     const averagePriorWeek = apports1.reduce((sum, value) => sum + Number(value), 0)
     const dif1 = average - averagePriorWeek
 
-    const apports2 = data2.map(val => val.Apports)
+    const apports2 = data2.map(val => val.apports)
     const averagePrior2Weeks = apports2.reduce((sum, value) => sum + Number(value), 0)
     const dif2 = average - averagePrior2Weeks
 
-    const apports3 = data3.map(val => val.Apports)
+    const apports3 = data3.map(val => val.apports)
     const averagePriorMonth = apports3.reduce((sum, value) => sum + Number(value), 0)
     const dif3 = average - averagePriorMonth
 
@@ -154,36 +151,36 @@ export default function FirstChart(props) {
                 stat === 14 ?
                     dif1.toFixed(1) >= 0 ?
                         <div>
-                            <IoChevronUpCircleOutline id='dif1Up' size='27px' />
+                            <IoChevronUpCircleOutline id='dif1Up' size='26px' />
                             <p className='dif1' style={{ color: '#13CD3C' }}>+{dif1.toFixed(1)}%</p>
                         </div>
                         :
                         <div>
-                            <IoChevronDownCircleOutline id='dif1Down' size='27px' />
+                            <IoChevronDownCircleOutline id='dif1Down' size='26px' />
                             <p className='dif1' style={{ color: 'red' }}>{dif1.toFixed(1)}%</p>
                         </div>
                     :
                     stat === 28 ?
                         dif2.toFixed(1) >= 0 ?
                             <div>
-                                <IoChevronUpCircleOutline id='dif1Up' size='27px' />
+                                <IoChevronUpCircleOutline id='dif1Up' size='26px' />
                                 <p className='dif1' style={{ color: '#13CD3C' }}>+{dif2.toFixed(1)}%</p>
                             </div>
                             :
                             <div>
-                                <IoChevronDownCircleOutline id='dif1Down' size='27px' />
+                                <IoChevronDownCircleOutline id='dif1Down' size='26px' />
                                 <p className='dif1' style={{ color: 'red' }}>{dif2.toFixed(1)}%</p>
                             </div>
                         :
                         stat === 60 ?
                             dif3.toFixed(1) >= 0 ?
                                 <div>
-                                    <IoChevronUpCircleOutline id='dif1Up' size='27px' />
+                                    <IoChevronUpCircleOutline id='dif1Up' size='26px' />
                                     <p className='dif1' style={{ color: '#13CD3C' }}>+{dif3.toFixed(1)}%</p>
                                 </div>
                                 :
                                 <div>
-                                    <IoChevronDownCircleOutline id='dif1Down' size='27px' />
+                                    <IoChevronDownCircleOutline id='dif1Down' size='26px' />
                                     <p className='dif1' style={{ color: 'red' }}>{dif3.toFixed(1)}%</p>
                                 </div>
                             : null

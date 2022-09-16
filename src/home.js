@@ -29,7 +29,7 @@ export default function Home() {
       <div className='accountSection'>
         <div style={myStyle} >
           <h1 className='status-home'>SUIVEZ  LE  STATUS DE TON BARRAGE !</h1>
-          <h1 className='stock-home'>STOCK &<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  APPORT</h1>
+          <h1 className='stock-home'>STOCK &<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   APPORT</h1>
           <button className='button-home' onClick={() => {
             navigate('/data')
           }}>VISUALISER</button>
