@@ -22,8 +22,8 @@
     width: 1.4vw;
     height: 1.4vw;
 }
-#logout:hover
-{
+
+#logout:hover {
     cursor: pointer;
     opacity: 0.3;
 }
@@ -35,8 +35,8 @@
     width: 1.5vw;
     height: 1.5vw;
 }
-.icon:hover
-{
+
+.icon:hover {
     cursor: pointer;
     opacity: 0.3;
 }
@@ -48,8 +48,8 @@
     width: 1.5vw;
     height: 1.3vw;
 }
-#peop:hover
-{
+
+#peop:hover {
     cursor: pointer;
     opacity: 0.3;
 }
@@ -61,8 +61,8 @@
     width: 1.8vw;
     height: 1.4vw;
 }
-#edit:hover
-{
+
+#edit:hover {
     cursor: pointer;
     opacity: 0.3;
 }
@@ -74,8 +74,121 @@
     width: 1.5vw;
     height: 1.5vw;
 }
-#vis:hover
-{
+
+#vis:hover {
     cursor: pointer;
     opacity: 0.3;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 700px) {
+    .icon {
+        position: absolute;
+        right: 40%;
+        top: 15%;
+        width: 2vw;
+        height: 2vw;
+    }
+
+    #peop {
+        position: absolute;
+        top: 25%;
+        width: 2vw;
+        height: 1.8vw;
+    }
+
+    #edit {
+        position: absolute;
+        right: 35%;
+        top: 35%;
+        width: 2.3vw;
+        height: 1.9vw;
+    }
+
+    #vis {
+        position: absolute;
+        right: 40%;
+        top: 45%;
+        width: 2vw;
+        height: 2vw;
+    }
+
+    #logout {
+        position: absolute;
+        right: 40%;
+        bottom: 7%;
+        width: 1.9vw;
+        height: 1.9vw;
+    }
+
+}
+
+@media only screen and (max-width: 699px) and (min-width: 500px) {
+    .icon {
+        top: 70px;
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+
+    #peop {
+        top: 130px;
+        width: 2.5vw;
+        height: 2.3vw;
+    }
+
+    #edit {
+        top: 190px;
+        width: 2.8vw;
+        height: 2.4vw;
+    }
+
+    #vis {
+        top: 250px;
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+
+    #logout {
+        width: 2.4vw;
+        height: 2.4vw;
+    }
+
+}
+
+@media only screen and (max-width: 499px) and (min-width: 350px) {
+    .icon {
+        position: absolute;
+        top: 70px;
+        width: 3vw;
+        height: 3vw;
+    }
+
+    #peop {
+        position: absolute;
+        top: 130px;
+        width: 3vw;
+        height: 2.8vw;
+    }
+
+    #edit {
+        position: absolute;
+        top: 190px;
+        width: 3.3vw;
+        height: 2.9vw;
+    }
+
+    #vis {
+        position: absolute;
+        top: 250px;
+        width: 3vw;
+        height: 3vw;
+    }
+
+    #logout {
+        position: absolute;
+        right: 40%;
+        bottom: 7%;
+        width: 2.9vw;
+        height: 2.9vw;
+    }
+
 }

@@ -85,6 +85,9 @@
     color: #6E6E6E;
     cursor: pointer;
     outline: none;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
 }
 
 .dateSelection {
@@ -100,11 +103,35 @@
     color: #6E6E6E;
     cursor: pointer;
     outline: none;
+    scroll-behavior: smooth;
+
+}
+.edit-error-date {
+    color: red;
+    font-size: 1vw;
+    font-family: 'Gilroy ExtraBold';
+    position: absolute;
+    bottom: 17%;
+    left: 30%;
+}
+
+.edit-error-nom {
+    color: red;
+    font-size: 1vw;
+    font-family: 'Gilroy ExtraBold';
+    position: absolute;
+    bottom: 17%;
+    left: 27.5%;
+}
+.default-select {
+    font-family: "Gilroy ExtraBold";
+    font-size: 2vw;
+    font-weight: bolder;
 }
 
 option {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1vw;
+    font-size: 1.8vw;
 }
 
 #down1 {
@@ -177,6 +204,17 @@ option {
         bottom: 35%;
         font-size: 1.8vw;
     }
+    .edit-error-date {
+        bottom: 28%;
+        left: 28.7%;
+        font-size: 1.2vw;
+    }
+
+    .edit-error-nom {
+        bottom: 28%;
+        left: 26%;
+        font-size: 1.2vw;
+    }
 }
 
 @media only screen and (max-width: 1200px) and (min-width: 1000px) {
@@ -193,6 +231,18 @@ option {
         width: 27vw;
         padding: 1.6vw;
         padding-left: 2.5vw;
+        font-size: 1.2vw;
+    }
+    .edit-error-date
+    {
+        bottom: 38%;
+        left: 32%;
+        font-size: 1.2vw;
+    }
+    .edit-error-nom
+    {
+        bottom: 38%;
+        left: 28.5%;
         font-size: 1.2vw;
     }
 
@@ -235,6 +285,18 @@ option {
         padding-left: 3vw;
         font-size: 1.2vw;
     }
+    .edit-error-date
+    {
+        bottom: 42%;
+        left: 32%;
+        font-size: 1.2vw;
+    }
+    .edit-error-nom
+    {
+        bottom: 42%;
+        left: 28.5%;
+        font-size: 1.2vw;
+    }
 
     #info2 {
         font-size: 3vw;
@@ -266,6 +328,18 @@ option {
 
     #pic1 {
         width: 65%;
+    }
+    .edit-error-date
+    {
+        bottom: 52%;
+        left: 40%;
+        font-size: 1.2vw;
+    }
+    .edit-error-nom
+    {
+        bottom: 52%;
+        left: 36%;
+        font-size: 1.2vw;
     }
 
     #info2 {
@@ -302,7 +376,7 @@ option {
 
 }
 
-@media only screen and (max-width: 600px) and (min-width: 400px) {
+@media only screen and (max-width: 600px) and (min-width: 300px) {
     #pic2 {
         width: 45%;
     }
@@ -338,8 +412,20 @@ option {
 
     .validerButton {
         left: 39%;
-        bottom: 58%;
+        bottom: 55%;
         font-size: 4vw;
         width: 32vw;
+    }
+    .edit-error-date
+    {
+        bottom: 50%;
+        left: 44%;
+        font-size: 1.6vw;
+    }
+    .edit-error-nom
+    {
+        bottom: 50%;
+        left: 40%;
+        font-size: 1.6vw;
     }
 }

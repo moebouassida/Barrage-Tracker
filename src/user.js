@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, { useState,useContext, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate,useSearchParams } from 'react-router-dom';
 import { UserContext } from './UserContext';
@@ -15,6 +15,11 @@ export default function User() {
   const [searchparams] = useSearchParams()
   const session=searchparams.get('auth');
   const navigate=useNavigate()
+  useEffect(()=>{if (localStorage.getItem('username'))
+  {
+    navigate('/account');
+  }})
+  
   const initialValues = {
     Email: "",
     Password: "",

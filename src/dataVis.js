@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 
 import axios from 'axios'
 
@@ -6,11 +6,12 @@ import Navbar from './Navbar'
 import FirstChart from './firstChart'
 import SecChart from './secChart'
 import ThirdChart from './thirdChart'
+import { UserContext } from './UserContext'
 
 import './dataVis.css'
 
 export default function DataVis() {
-
+    const {value,setValue}=useContext(UserContext)
     const [firstChartTime, setFirstChartTime] = useState(7)
     const [secChartTime, setSecChartTime] = useState(7)
     const [location, setLocation] = useState("mellegue")
@@ -125,7 +126,7 @@ export default function DataVis() {
 
     return (
         <div>
-            <Navbar where={'Vis'} />
+            <Navbar where={'Vis'} user={value} />
 
             <div className='visSection'>
                 <div className='dataHeader'>

@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext} from 'react'
 
 import Navbar from './Navbar'
 
 import Pw from './img/pw.png'
 
 import './connected.css'
+import { UserContext } from './UserContext'
 
 export default function Connected() {
   const [username,setusername]=useState(null);
+  const {value,setValue}=useContext(UserContext)
   useEffect(()=>setusername(localStorage.getItem('username')),[]);
   console.log(username)
   return (

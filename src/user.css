@@ -25,7 +25,7 @@
 }
 
 .userSection h1 {
-    font-family: 'Gilory';
+    font-family: "Gilroy ExtraBold";
     color: #2E384D;
     font-size: 3.5vw;
 }
@@ -52,7 +52,7 @@
 
 .form input {
     font-family: 'gilroy';
-    font-size: .8vw;
+    font-size: 0.5vw;
 }
 
 #contactAdmin {
@@ -69,7 +69,7 @@
     margin-top: 1%;
     margin-left: 1%;
     color: red;
-    font-size: .7vw;
+    font-size: 0.7vw;
     font-family: 'Gilroy ExtraBold';
 }
 
@@ -116,34 +116,37 @@
 
 @media only screen and (max-width: 1920px) and (min-width: 1669px) {
     #pic {
-        top: 0vw;
+        top: 2%;
     }
 }
 
 @media only screen and (max-width: 1669px) and (min-width: 1470px) {
     #pic {
         position: relative;
-        top: 2vw;
-        right: 1%;
+        top: 3%;
+        right: 10%;
         float: right;
     }
 
     .userSection input {
-        font-size: 1.1vw;
+        font-size: 0.8vw;
     }
 }
 
 @media only screen and (max-width: 1470px) and (min-width: 1320px) {
     #pic {
         position: relative;
-        top: 3vw;
-        right: 1%;
-        float: right;
-        width: 46%;
+        top: 1.5%;
+        right: 12%;
+        width: 33%;
+    }
+    .form
+    {
+        left: 15%;
     }
 
     .userSection input {
-        font-size: 1.3vw;
+        font-size: 0.8vw;
     }
 
     .userSection h1 {
@@ -151,7 +154,7 @@
     }
 
     .userSection p {
-        font-size: 1.3vw;
+        font-size: 0.8vw;
     }
 
     #mdp {
@@ -165,16 +168,14 @@
 
 @media only screen and (max-width: 1320px) and (min-width: 1220px) {
     #pic {
-        position: relative;
-        top: 6vw;
-        right: 1%;
-        float: right;
-        width: 47%;
+        top: 3%;
+        right: 12%;
+        width: 36%;
     }
 
     .userSection input {
         width: 24vw;
-        font-size: 1.5vw;
+        font-size: 0.8vw;
     }
 
     .form {
@@ -186,7 +187,7 @@
     }
 
     .userSection p {
-        font-size: 1.4vw;
+        font-size: 0.8vw;
     }
 
     #mdp {
@@ -206,9 +207,9 @@
 
     #pic {
         position: relative;
-        top: 7vw;
-        right: 1%;
-        width: 48%;
+        top: 1.5%;
+        right: 7%;
+        width: 40%;
     }
 
     .userSection input {
@@ -218,7 +219,7 @@
     }
 
     .form {
-        top: 9%;
+        top: 4%;
     }
 
     .userSection h1 {
@@ -226,7 +227,7 @@
     }
 
     .userSection p {
-        font-size: 1.4vw;
+        font-size: 0.8vw;
     }
 
     #mdp {
@@ -303,7 +304,7 @@
     }
 }
 
-@media only screen and (max-width: 500px) and (min-width: 400px) {
+@media only screen and (max-width: 500px) and (min-width: 350px) {
     .userSection {
         left: 10.6%;
     }
@@ -505,7 +506,7 @@
     }
 }
 
-@media only screen and (max-width: 500px) and (min-width: 400px) {
+@media only screen and (max-width: 500px) and (min-width: 350px) {
     .userSection {
         height: 200vw;
     }

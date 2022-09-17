@@ -86,10 +86,10 @@ export default function Navbar(props) {
         <div>
           {props.user ? 
             edit ?
-              <img src={Edit2} className='icon' id='vis' onClick={() => {
+              <img src={Edit2} id='vis' onClick={() => {
                 navigate('/edit')}}  />
               :
-              <img src={Edit} className='icon' id='vis' onClick={() => {
+              <img src={Edit} id='vis' onClick={() => {
               value ? navigate('/edit') : goLogin(navigate,value) }} /> : null
           }
         </div>
