@@ -23,8 +23,8 @@ return (
                 <Route path='/data'element={<DataVis />}/>
                 <Route path='/login'element={<User />}/>
                 <Route path='/account'element={<Connected />}/>
-                <Route path='/edit'element={<Edit />}/>
                 <Route path='/input'element={<Input />}/>
+                <Route path='/edit'element={<Edit />}/>
         </Routes>
         </UserContext.Provider>
     </Router>

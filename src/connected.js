@@ -14,7 +14,7 @@ export default function Connected() {
   console.log(username)
   return (
     <div>
-        <Navbar where={'Peop'} user={username} />
+        <Navbar where={'Peop'} user={value} />
         <div className='connectedSection'>
             <img className='image-connected' src={Pw} />
             <h1 id='info'>VOUS ÊTES CONNECTÉ EN TANT QUE {username}</h1>
