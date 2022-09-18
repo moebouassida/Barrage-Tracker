@@ -19,19 +19,22 @@ var testInput = [];
 const barrageListAr =["مـــــلاق","سراط","بنيمطيــر","كســاب","بربرة","سيدي ســــالم","بو هرتمـــــه","جوميــــــن","غزالـــــــة","المالح","الطين","سجنــــــان","الزرقة","الكبير","المولى","سيدي البــــراق","الزياتين","القمقوم","الحركة","سليانـــــــة","لخمـــــــاس","الرميـــــــل","بئر المشارقـــة","الرمــــــل","نبهانــــــة","سيدي سعـــد","هـــــــوارب","سفيسيفة","سيدي يعيــــش","البــــــــرك","بزيـــــــغ","شيبـــــــة","مصــــــري","لبنــــــــة","الحمـــــى","العبيـــــــد"]
 const barrageListFr = ['mellegue', 'sarrat', 'benmetir', 'kasseb', 'barbara', 'sidisalem', 'bouheurtma', 'joumine', 'ghezala', 'melah', 'tine', 'siliana', 'lakhmess', 'rmil', 'birmcherga', 'rmel', 'nebhana', 'sidisaad', 'elhaouareb', 'sficifa', 'sidiach', 'elbrek', 'bezirk', 'chiba', 'masri', 'lebna', 'hma', 'abid'];
 export default function Input() {
-  const [searchparams] = useSearchParams()
-  const Date=searchparams.get('Date');
-  const Nom_Fr=searchparams.get('Nom_Fr').toLowerCase();
-  const index=barrageListFr.indexOf(Nom_Fr);
-
   const navigate = useNavigate();
   const {value,setValue}=useContext(UserContext)
   useEffect(()=>{
-      if (!value)
-      {
-          navigate('/login')
-      }
-  })
+    if (!value)
+    {
+        navigate('/login')
+    }
+},[])
+  const [searchparams] = useSearchParams()
+  let Date,Nom_Fr;
+  if (value)
+  {
+    Date=searchparams.get('Date');
+    Nom_Fr=searchparams.get('Nom_Fr').toLowerCase();
+  }
+  const index=barrageListFr.indexOf(Nom_Fr);
   const [allValues, setAllValues] = useState(null);
   const [testElement, setTestElement] = useState(null);
 

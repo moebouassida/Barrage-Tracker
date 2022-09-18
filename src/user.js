@@ -14,6 +14,7 @@ export default function User() {
   const {value,setValue}=useContext(UserContext)
   const [searchparams] = useSearchParams()
   const session=searchparams.get('auth');
+  console.log(session)
   const navigate=useNavigate()
   useEffect(()=>{if (localStorage.getItem('username'))
   {
@@ -39,8 +40,6 @@ export default function User() {
   return (
     <div>
       <Navbar where={'Peop'} user={value}  />
-
-
       <div className='userSection'>
         <img id='pic' src={userimg} />
         <form action="#" className="form" onSubmit={formik.handleSubmit}>
