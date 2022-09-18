@@ -8,9 +8,9 @@ import * as Yup from 'yup';
 
 import Navbar from './Navbar'
 
-import Pic1 from './img/pic1.png'
+import Pic1 from './img/back_brg.png'
 
-import Pic2 from './img/pic2.png'
+
 
 import './editHome.css'
 
@@ -70,13 +70,18 @@ export default function EditHome() {
         initialValues, validationSchema, onSubmit: (values) => navigate('/')
     });
     return (
-        <div>
+        <div className='wrapper'>
             <Navbar where={'Edit'} user={true} />
-            <form action="#" onSubmit={formik.handleSubmit}>
-                <div className='editSection'>
-                    <img id='pic1' src={Pic1} />
-                    <img id='pic2' src={Pic2} />
+            
+            <div className="lineEdit">
+        <div className="lineEdit1"></div>
+        <div className="lineEdit2"></div>
+      </div>
+                 <div className='editSection' > 
 
+                    
+                    <form action="#" onSubmit={formik.handleSubmit} >
+                    
                     <div className='barrageName'>
                         <HiOutlineChevronDown id='down1' size={25} />
                         <select className='nameSelection' name="Nom"
@@ -99,13 +104,16 @@ export default function EditHome() {
                         </select>
                     </div>
                     {formik.errors.Date ?(<p className='edit-error-date'>Date obligatoire*</p> ): null}
-                </div>
                 <h1 id='info2'>Veuillez insérer les données nécessaires .</h1>
                 <button className='validerButton' type="submit" >Valider</button>
+                
             </form>
+            <img className='pic1' src={Pic1} />
+            </div> 
+            
         </div>
 
 
-    )
+    );
 }
 

@@ -3,62 +3,60 @@ import Navbar from "./Navbar";
 import "./Input.css";
 
 import axios from "./api/axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import back_brg from "./img/back_brg.png";
-import { type } from "@testing-library/user-event/dist/type";
-import { number } from "yup";
 
 const getByDateAndName_url = "/api/element/getByDateAndName";
-const updateInput_url="/api/element/update";
-const create_url="/api/element/create";
-const numbers=Array(10).fill().map((v,i)=>i);
-numbers.push('.');
+const updateInput_url = "/api/element/update";
+const create_url = "/api/element/create";
+const numbers = Array(10)
+  .fill()
+  .map((v, i) => i);
+numbers.push(".");
 console.log(numbers);
-var testInput=[];
-
+var testInput = [];
 
 export default function Input() {
-  
-   const [allValues,setAllValues] = useState(null);
-   const[testElement,setTestElement]=useState(null);
-   
-const verif =(x)=>{
-  var test=false;
-  for (var i=0;i<x.length;i++){
-    
-   if(numbers.indexOf(parseInt(x[i]))!==-1){test=true;}
-   else {test=false;}
-  }
-  return(test)
-}
+  const navigate = useNavigate();
+  const [allValues, setAllValues] = useState(null);
+  const [testElement, setTestElement] = useState(null);
 
- const handleChange = e => {
-  console.log(e.target.value);
-  
-  console.log(verif(e.target.value));
-  testInput.push(verif(e.target.value));
-  console.log(testInput);
-  if(verif(e.target.value)){
-  
-    setAllValues({...allValues, [e.target.name]: e.target.value});
-  
-  }
- }
-  
+  const verif = (x) => {
+    var test = false;
+    for (var i = 0; i < x.length; i++) {
+      if (numbers.indexOf(parseInt(x[i])) !== -1) {
+        test = true;
+      } else {
+        test = false;
+      }
+    }
+    return test;
+  };
+
+  const handleChange = (e) => {
+    console.log(e.target.value);
+
+    console.log(verif(e.target.value));
+    testInput.push(verif(e.target.value));
+    console.log(testInput);
+    if ((verif(e.target.value))||(e.target.value==='')) {
+      setAllValues({ ...allValues, [e.target.name]: e.target.value });
+    }
+  };
 
   useEffect(() => {
     axios
       .get(getByDateAndName_url, {
         params: {
-          Nom_Fr: "mellegue",
-          Date: "2022-09-17 00:00:00",
+          Nom_Fr: "NOUR",
+          Date: "2022-09-18 00:00:00",
         },
       })
       .then((response) => {
         const element = response.data;
-        
+
         if (element !== null) {
-          console.log('mizou');
+          console.log("mizou");
           console.log(element.Nom_Fr);
           setTestElement(element);
 
@@ -87,11 +85,9 @@ const verif =(x)=>{
             Longitude: element.Longitude,
             Bassin_versant: element.Bassin_versant,
           });
-         
         } else {
           setAllValues({
-          _id:"",
-           Nom_Fr: "mellegue",
+            Nom_Fr: "NOUR",
             Nom_Ar: "me",
             apports: "",
             id_barrage: "",
@@ -122,62 +118,60 @@ const verif =(x)=>{
       });
   }, []);
   
-     
+  const createElement = (v) => {
+    console.log(v);
+    axios
+      .post(create_url,  {...v, } )
 
-  const updateInputs= (id,values) => {
+      .then((response) => {
+        console.log(response); 
+        console.log("element created");
+      })
+      .catch((error) => {
+        console.log("lmochkel fel connection element");
+        console.log(error.message);
+      });
+  };
+
+  const updateInputs = (id, values) => {
     console.log(values);
     axios
-      .put(updateInput_url, 
-         {
-          id: id,
-          ...values,
-          
-        },
-      )
+      .put(updateInput_url, {
+        id: id,
+        ...values,
+      })
       .then((response) => {
-        
-       console.log(response);
-       console.log('samir');
-      //  console.log(id);
-      //  console.log(values);
-       
-       
+        console.log(response);
+        console.log("samir");
       })
       .catch((error) => {
         console.log("lmochkel fel connection2");
         console.log(error.message);
       });
-    
   };
-  
-  
-  const navigate = useNavigate();
+
   if (allValues === null) {
     return null;
   }
-  console.log('lelement');
+  console.log("lelement");
   console.log(testElement);
-  console.log('moez');
+  console.log("moez");
   console.log(allValues._id);
   return (
     <div>
-      <Navbar where={"Edit"} logout_icon={false} />
+      <Navbar where={"Edit"} user={true} />
 
       <div className="line">
         <div className="line1"></div>
         <div className="line2"></div>
       </div>
-      <form
-        action="#"
-        id="form"
-        className="form_input"
-      >
+      <div className="inputWrapper">
+      <form action="#" id="form" className="form_input">
         <div className="input">
           <input
-          
             className="input_brg"
             name="Nom_Fr"
-            value={allValues.Nom_Fr  }
+            value={allValues.Nom_Fr}
             readOnly
             type="text"
             placeholder="Nom Français"
@@ -186,7 +180,7 @@ const verif =(x)=>{
           <input
             className="input_brg"
             name="Nom_Ar"
-            value={allValues.Nom_Ar }
+            value={allValues.Nom_Ar}
             readOnly
             type="text"
             placeholder="Nom Arabe"
@@ -206,18 +200,18 @@ const verif =(x)=>{
           <input
             className="input_brg"
             name="id_barrage"
-            value={allValues.id_barrage }
-            onChange=  {handleChange}
+            value={allValues.id_barrage}
+            onChange={handleChange}
             type="text"
             placeholder="ID Barrage"
             autoComplete="off"
           />
-         
+
           <input
             className="input_brg"
             name="lachers"
             value={allValues.lachers}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Lachers"
             autoComplete="off"
@@ -225,8 +219,8 @@ const verif =(x)=>{
           <input
             className="input_brg"
             name="stock"
-            value={allValues.stock }
-            onChange={ handleChange}
+            value={allValues.stock}
+            onChange={handleChange}
             type="text"
             placeholder="Stock"
             autoComplete="off"
@@ -237,8 +231,7 @@ const verif =(x)=>{
             className="input_brg1"
             name="cumul_mensuel_apports"
             value={allValues.cumul_mensuel_apports}
-            onChange={ handleChange}
-           
+            onChange={handleChange}
             type="text"
             placeholder="Cumul Mensuel Apports"
             autoComplete="off"
@@ -247,7 +240,7 @@ const verif =(x)=>{
             className="input_brg1"
             name="cumul_annuel_apports"
             value={allValues.cumul_annuel_apports}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Cumul Annuel Apports"
             autoComplete="off"
@@ -258,7 +251,7 @@ const verif =(x)=>{
             className="input_brg1"
             name="cumul_mensuel_lachers"
             value={allValues.cumul_mensuel_lachers}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Cumul Mensuel Lachers"
             autoComplete="off"
@@ -267,7 +260,7 @@ const verif =(x)=>{
             className="input_brg1"
             name="cumul_annuel_lachers"
             value={allValues.cumul_annuel_lachers}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Cumul Annuel Lachers"
             autoComplete="off"
@@ -278,7 +271,7 @@ const verif =(x)=>{
             className="input_brg1"
             name="moy_mois"
             value={allValues.moy_mois}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Moyenne Mois"
             autoComplete="off"
@@ -288,7 +281,7 @@ const verif =(x)=>{
             className="input_brg1"
             name="cumul_annee_prec"
             value={allValues.cumul_annee_prec}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Cumul Année Precédente"
             autoComplete="off"
@@ -299,7 +292,7 @@ const verif =(x)=>{
             className="input_brg1"
             name="moy_periode"
             value={allValues.moy_periode}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Moyenne Période"
             autoComplete="off"
@@ -309,7 +302,7 @@ const verif =(x)=>{
             className="input_brg1"
             name="stock_annee_prec"
             value={allValues.stock_annee_prec}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Stock Année Precédente"
             autoComplete="off"
@@ -320,7 +313,7 @@ const verif =(x)=>{
             className="input_brg2"
             name="Cap_tot_act"
             value={allValues.Cap_tot_act}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Cap Tot Act"
             autoComplete="off"
@@ -330,7 +323,7 @@ const verif =(x)=>{
             className="input_brg2"
             name="Cote"
             value={allValues.Cote}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Cote"
             autoComplete="off"
@@ -340,7 +333,7 @@ const verif =(x)=>{
             className="input_brg2"
             name="Cap_tot_init"
             value={allValues.Cap_tot_init}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Cap Tot Init"
             autoComplete="off"
@@ -349,7 +342,7 @@ const verif =(x)=>{
             className="input_brg2"
             name="fonctionnel"
             value={allValues.fonctionnel}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Fonctionnel"
             autoComplete="off"
@@ -360,7 +353,7 @@ const verif =(x)=>{
             className="input_brg3"
             name="Annee_prod"
             value={allValues.Annee_prod}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Année Prod"
             autoComplete="off"
@@ -369,7 +362,7 @@ const verif =(x)=>{
             className="input_brg3"
             name="Latitude"
             value={allValues.Latitude}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Latitude"
             autoComplete="off"
@@ -380,7 +373,7 @@ const verif =(x)=>{
             className="input_brg3"
             name="Longitude"
             value={allValues.Longitude}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Longitude"
             autoComplete="off"
@@ -390,20 +383,33 @@ const verif =(x)=>{
             className="input_brg3"
             name="Bassin_versant"
             value={allValues.Bassin_versant}
-            onChange={ handleChange}
+            onChange={handleChange}
             type="text"
             placeholder="Bassin Versant"
             autoComplete="off"
           />
         </div>
-        <button className="btn" onClick={() => {
-           updateInputs(allValues._id,allValues);
-           console.log('nouss');
-            console.log(allValues);
-          }}>Enregistrer</button>
+        <button
+          className="btn"
+          onClick={() => {
+            if (testElement !== null) {
+              updateInputs(allValues._id, allValues);
+              console.log("nouss");
+              console.log(allValues);
+              navigate("/enregistrement");
+            } else {
+              createElement(allValues);
+              console.log("nounou");
+              navigate("/enregistrement");
+            }
+          }}
+        >
+          Enregistrer
+        </button>
       </form>
 
       <img className="img_brg" src={back_brg}></img>
+      </div>
     </div>
   );
 }

@@ -5,13 +5,13 @@
 .line3{
     
     margin-top: 7vh;
-    margin-bottom: 1.5vh;
+    margin-bottom: 0.5vh;
     width:5.1%;
 }
 .line4{
     border-bottom: solid 2px #EFECEC;
     margin-top: 7vh;
-    margin-bottom: 1.5vh;
+    margin-bottom: 0.5vh;
     width: 94.9%;
 }
 @media only screen and (max-width: 900px) {
@@ -44,7 +44,7 @@
     display: block;
     /* flex-direction: column; */
     justify-content: center;
-    margin-top: 3vh;
+    margin-top: 1vh;
     margin-left: 5vw;
     margin-right: 0;
     background-color: #FFFCFC;
