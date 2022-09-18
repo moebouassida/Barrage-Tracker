@@ -8,6 +8,7 @@ import User from './user'
 import Connected from './connected'
 import Edit from './EditHome'
 import Input from './Input'
+import Enregistrement  from'./Enregistrement'
 import { UserContext } from './UserContext'
 
 
@@ -25,6 +26,8 @@ return (
                 <Route path='/account'element={<Connected />}/>
                 <Route path='/input'element={<Input />}/>
                 <Route path='/edit'element={<Edit />}/>
+                <Route path='/enregistrement'element={<Enregistrement />}/>
+
         </Routes>
         </UserContext.Provider>
     </Router>

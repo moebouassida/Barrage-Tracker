@@ -1,0 +1,60 @@
+@import url(//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold);
+.line0{
+    display: flex;
+}
+.line3{
+    
+    margin-top: 7vh;
+    margin-bottom: 1.5vh;
+    width:5.1%;
+}
+.line4{
+    border-bottom: solid 2px #EFECEC;
+    margin-top: 7vh;
+    margin-bottom: 1.5vh;
+    width: 94.9%;
+}
+@media only screen and (max-width: 900px) {
+    .line1{
+    
+        margin-top: 7vh;
+    margin-bottom: 0.5vh;
+        width:9.2%;
+    }
+    .line2{
+        border-bottom: solid 2px #EFECEC;
+        margin-top: 7vh;
+    margin-bottom: 0.5vh;
+        width: 90%;
+    }
+  }
+.data{
+    position: relative;
+
+   
+    margin-left: 27vw;
+    margin-bottom: 5vh;
+   width:30%;
+   height:30%;
+  
+ 
+}
+.wrap{
+    width: 110%;
+    display: block;
+    /* flex-direction: column; */
+    justify-content: center;
+    margin-top: 3vh;
+    margin-left: 5vw;
+    margin-right: 0;
+    background-color: #FFFCFC;
+    margin-top:0;
+    padding: 0;
+}
+.registred{
+    font-family: "Gilroy ExtraBold";
+    color:#2BC98A;
+    font-size: 2vw;
+    margin-left: 23vw;
+   
+}

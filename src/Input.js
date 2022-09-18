@@ -5,17 +5,44 @@ import "./Input.css";
 import axios from "./api/axios";
 import React, { useEffect, useRef, useState } from "react";
 import back_brg from "./img/back_brg.png";
+import { type } from "@testing-library/user-event/dist/type";
+import { number } from "yup";
 
 const getByDateAndName_url = "/api/element/getByDateAndName";
 const updateInput_url="/api/element/update";
+const create_url="/api/element/create";
+const numbers=Array(10).fill().map((v,i)=>i);
+numbers.push('.');
+console.log(numbers);
+var testInput=[];
+
 
 export default function Input() {
-  //   const [element, setElement] = useState(null);
+  
    const [allValues,setAllValues] = useState(null);
+   const[testElement,setTestElement]=useState(null);
+   
+const verif =(x)=>{
+  var test=false;
+  for (var i=0;i<x.length;i++){
+    
+   if(numbers.indexOf(parseInt(x[i]))!==-1){test=true;}
+   else {test=false;}
+  }
+  return(test)
+}
 
  const handleChange = e => {
+  console.log(e.target.value);
+  
+  console.log(verif(e.target.value));
+  testInput.push(verif(e.target.value));
+  console.log(testInput);
+  if(verif(e.target.value)){
+  
     setAllValues({...allValues, [e.target.name]: e.target.value});
-    console.log('nawara');
+  
+  }
  }
   
 
@@ -24,15 +51,16 @@ export default function Input() {
       .get(getByDateAndName_url, {
         params: {
           Nom_Fr: "mellegue",
-          Date: "2022-09-12 00:00:00",
+          Date: "2022-09-17 00:00:00",
         },
       })
       .then((response) => {
         const element = response.data;
-        console.log(element);
+        
         if (element !== null) {
           console.log('mizou');
           console.log(element.Nom_Fr);
+          setTestElement(element);
 
           setAllValues({
             _id: element._id,
@@ -63,8 +91,8 @@ export default function Input() {
         } else {
           setAllValues({
           _id:"",
-           Nom_Fr: "",
-            Nom_Ar: "",
+           Nom_Fr: "mellegue",
+            Nom_Ar: "me",
             apports: "",
             id_barrage: "",
             lachers: "",
@@ -93,17 +121,21 @@ export default function Input() {
         console.log(error);
       });
   }, []);
+  
+     
 
   const updateInputs= (id,values) => {
+    console.log(values);
     axios
       .put(updateInput_url, 
          {
-          _id: id,
-          values,
+          id: id,
+          ...values,
           
         },
       )
-      .then((response) => {;
+      .then((response) => {
+        
        console.log(response);
        console.log('samir');
       //  console.log(id);
@@ -123,6 +155,8 @@ export default function Input() {
   if (allValues === null) {
     return null;
   }
+  console.log('lelement');
+  console.log(testElement);
   console.log('moez');
   console.log(allValues._id);
   return (
@@ -136,15 +170,15 @@ export default function Input() {
       <form
         action="#"
         id="form"
-       
         className="form_input"
       >
         <div className="input">
           <input
+          
             className="input_brg"
             name="Nom_Fr"
             value={allValues.Nom_Fr  }
-            onChange={ handleChange}
+            readOnly
             type="text"
             placeholder="Nom Français"
             autoComplete="off"
@@ -153,7 +187,7 @@ export default function Input() {
             className="input_brg"
             name="Nom_Ar"
             value={allValues.Nom_Ar }
-            onChange={ handleChange}
+            readOnly
             type="text"
             placeholder="Nom Arabe"
             autoComplete="off"
@@ -173,11 +207,12 @@ export default function Input() {
             className="input_brg"
             name="id_barrage"
             value={allValues.id_barrage }
-            onChange={ handleChange}
+            onChange=  {handleChange}
             type="text"
             placeholder="ID Barrage"
             autoComplete="off"
           />
+         
           <input
             className="input_brg"
             name="lachers"
@@ -263,7 +298,7 @@ export default function Input() {
           <input
             className="input_brg1"
             name="moy_periode"
-            value={allValues.moy_periodes}
+            value={allValues.moy_periode}
             onChange={ handleChange}
             type="text"
             placeholder="Moyenne Période"
@@ -364,7 +399,7 @@ export default function Input() {
         <button className="btn" onClick={() => {
            updateInputs(allValues._id,allValues);
            console.log('nouss');
-            console.log(allValues._id);
+            console.log(allValues);
           }}>Enregistrer</button>
       </form>
 
