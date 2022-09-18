@@ -1,30 +1,45 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useSearchParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./Input.css";
 
 import axios from "./api/axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import back_brg from "./img/back_brg.png";
+import { UserContext } from "./UserContext";
 
 const getByDateAndName_url = "/api/element/getByDateAndName";
 const updateInput_url = "/api/element/update";
 const create_url = "/api/element/create";
 const numbers = Array(10)
   .fill()
-  .map((v, i) => i);
+  .map((v, i) => `${i}`);
 numbers.push(".");
 console.log(numbers);
 var testInput = [];
-
+const barrageListAr =["مـــــلاق","سراط","بنيمطيــر","كســاب","بربرة","سيدي ســــالم","بو هرتمـــــه","جوميــــــن","غزالـــــــة","المالح","الطين","سجنــــــان","الزرقة","الكبير","المولى","سيدي البــــراق","الزياتين","القمقوم","الحركة","سليانـــــــة","لخمـــــــاس","الرميـــــــل","بئر المشارقـــة","الرمــــــل","نبهانــــــة","سيدي سعـــد","هـــــــوارب","سفيسيفة","سيدي يعيــــش","البــــــــرك","بزيـــــــغ","شيبـــــــة","مصــــــري","لبنــــــــة","الحمـــــى","العبيـــــــد"]
+const barrageListFr = ['mellegue', 'sarrat', 'benmetir', 'kasseb', 'barbara', 'sidisalem', 'bouheurtma', 'joumine', 'ghezala', 'melah', 'tine', 'siliana', 'lakhmess', 'rmil', 'birmcherga', 'rmel', 'nebhana', 'sidisaad', 'elhaouareb', 'sficifa', 'sidiach', 'elbrek', 'bezirk', 'chiba', 'masri', 'lebna', 'hma', 'abid'];
 export default function Input() {
+  const [searchparams] = useSearchParams()
+  const Date=searchparams.get('Date');
+  const Nom_Fr=searchparams.get('Nom_Fr').toLowerCase();
+  const index=barrageListFr.indexOf(Nom_Fr);
+  console.log(index)
+
   const navigate = useNavigate();
+  const {value,setValue}=useContext(UserContext)
+  useEffect(()=>{
+      if (!value)
+      {
+          navigate('/login')
+      }
+  })
   const [allValues, setAllValues] = useState(null);
   const [testElement, setTestElement] = useState(null);
 
   const verif = (x) => {
     var test = false;
     for (var i = 0; i < x.length; i++) {
-      if (numbers.indexOf(parseInt(x[i])) !== -1) {
+      if (numbers.indexOf(x[i]) !== -1) {
         test = true;
       } else {
         test = false;
@@ -48,8 +63,8 @@ export default function Input() {
     axios
       .get(getByDateAndName_url, {
         params: {
-          Nom_Fr: "NOUR",
-          Date: "2022-09-18 00:00:00",
+          Nom_Fr: Nom_Fr,
+          Date: Date,
         },
       })
       .then((response) => {
@@ -87,8 +102,8 @@ export default function Input() {
           });
         } else {
           setAllValues({
-            Nom_Fr: "NOUR",
-            Nom_Ar: "me",
+            Nom_Fr: barrageListFr[index],
+            Nom_Ar: barrageListAr[index],
             apports: "",
             id_barrage: "",
             lachers: "",

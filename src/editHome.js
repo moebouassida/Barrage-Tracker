@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 
 import { BsChevronDown } from "react-icons/bs";
 import { HiOutlineChevronDown } from "react-icons/hi";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,createSearchParams } from 'react-router-dom';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 
 import Navbar from './Navbar'
 
 import Pic1 from './img/back_brg.png'
+import { UserContext } from './UserContext';
 
 
 
@@ -16,6 +17,13 @@ import './editHome.css'
 
 export default function EditHome() {
     const navigate = useNavigate()
+    const {value,setValue}=useContext(UserContext)
+    useEffect(()=>{
+        if (!value)
+        {
+            navigate('/login')
+        }
+    })
     let barrageList = []
     const username = localStorage.getItem('username');
     if (username !== "admin") {
@@ -67,7 +75,9 @@ export default function EditHome() {
             .required("Date required *.")
     });
     const formik = useFormik({
-        initialValues, validationSchema, onSubmit: (values) => navigate('/')
+        initialValues, validationSchema, onSubmit: (values) => {
+            navigate({pathname:'/input',search:createSearchParams({ Date : `${values.Date} 00:00:00`,Nom_Fr:values.Nom}).toString()})      
+        }
     });
     return (
         <div className='wrapper'>
@@ -78,10 +88,7 @@ export default function EditHome() {
         <div className="lineEdit2"></div>
       </div>
                  <div className='editSection' > 
-
-                    
                     <form action="#" onSubmit={formik.handleSubmit} >
-                    
                     <div className='barrageName'>
                         <HiOutlineChevronDown id='down1' size={25} />
                         <select className='nameSelection' name="Nom"

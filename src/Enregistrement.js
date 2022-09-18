@@ -1,13 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./Enregistrement.css";
-import React from "react";
+import React,{useEffect,useContext} from "react";
 import data from './img/data.png';
+import { UserContext } from "./UserContext";
 
 
 export default function Enregistrement() {
-
-    const navigate = useNavigate();
+  const navigate = useNavigate()
+  const {value,setValue}=useContext(UserContext)
+  useEffect(()=>{
+      if (!value)
+      {
+          navigate('/login')
+      }
+  })
     return(<div><Navbar where={"Edit"} user={true} />
     <div className="line0">
         <div className="line3"></div>
