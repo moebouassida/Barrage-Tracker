@@ -6,12 +6,19 @@ import Pw from './img/pw.png'
 
 import './connected.css'
 import { UserContext } from './UserContext'
+import { useNavigate } from 'react-router-dom'
 
 export default function Connected() {
+  const navigate=useNavigate()
   const [username,setusername]=useState(null);
   const {value,setValue}=useContext(UserContext)
   useEffect(()=>setusername(localStorage.getItem('username')),[]);
-  console.log(username)
+  useEffect(()=>{
+    if (!value)
+    {
+      navigate('/login')
+    }
+  })
   return (
     <div>
         <Navbar where={'Peop'} user={value} />

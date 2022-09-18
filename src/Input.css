@@ -5,13 +5,13 @@
 .line1{
     
     margin-top: 7vh;
-    margin-bottom: 1.5vh;
+    margin-bottom: 0.4vh;
     width:5.1%;
 }
 .line2{
     border-bottom: solid 2px #EFECEC;
     margin-top: 7vh;
-    margin-bottom: 1.5vh;
+    margin-bottom: 0.4vh;
     width: 94.9%;
 }
 @media only screen and (max-width: 900px) {
@@ -46,7 +46,7 @@
     color: #6E6E6E;
     background-color:#EAEAEA;
      border:none;
-    height: 50px;
+    height: 7vh;
     width: 20vw;
     margin-top: 1vh;
     margin-right: 0.4vw;
@@ -62,7 +62,7 @@ font-style: normal;
     color: #6E6E6E;
     background-color:#EAEAEA;
      border:none;
-    height: 50px;
+    height:  7vh;
     width: 27vw;
     margin-top: 1vh;
     margin-right: 0.4vw;
@@ -78,7 +78,7 @@ font-style: normal;
     color: #6E6E6E;
     background-color:#EAEAEA;
      border:none;
-    height: 50px;
+    height:  7vh;
     width: 12.5vw;
     margin-top: 1vh;
     margin-right: 0.4vw;
@@ -94,7 +94,7 @@ font-style: normal;
     color: #6E6E6E;
     background-color:#EAEAEA;
      border:none;
-    height: 50px;
+    height: 7vh;
     width: 24vw;
     margin-top: 1vh;
     margin-right: 0.4vw;
@@ -142,8 +142,6 @@ font-style: normal;
     display:flex;
     flex-direction:column;
     justify-content:center;
-   
-   
 
 }
 

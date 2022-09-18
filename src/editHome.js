@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { BsChevronDown } from "react-icons/bs";
 import { HiOutlineChevronDown } from "react-icons/hi";
@@ -15,9 +15,6 @@ import Pic2 from './img/pic2.png'
 import './editHome.css'
 
 export default function EditHome() {
-    const [click, setClick] = useState(false)
-    const [date, setDate] = useState('default');
-    const [nom, setNom] = useState('default');
     const navigate = useNavigate()
     let barrageList = []
     const username = localStorage.getItem('username');
@@ -67,7 +64,7 @@ export default function EditHome() {
         Nom: Yup.string()
             .required("Nom required *"),
         Date: Yup.string()
-            .required("Date isprovided.")
+            .required("Date required *.")
     });
     const formik = useFormik({
         initialValues, validationSchema, onSubmit: (values) => navigate('/')
@@ -90,7 +87,7 @@ export default function EditHome() {
                             {barrageList.map((Nom) => <option key={Nom} value={Nom}>{Nom}</option>)}
                         </select>
                     </div>
-                    {formik.touched.Nom && formik.errors.Nom ? (<p className='edit-error-nom'>Merci de selectionner le nom du barrage</p>) : null}
+                    {formik.errors.Nom ? (<p className='edit-error-nom'>Nom Barrage obligatoire*</p>) : null}
                     <div className='date'>
                         <BsChevronDown id='down2' size={25} />
                         <select className='dateSelection' name="Date"
@@ -101,7 +98,7 @@ export default function EditHome() {
                             {jourList.map((date) => <option key={date} value={date}>{date}</option>)}
                         </select>
                     </div>
-                    {formik.touched.Date && formik.errors.Date ?(<p className='edit-error-date'>Merci de selectionner la date</p> ): null}
+                    {formik.errors.Date ?(<p className='edit-error-date'>Date obligatoire*</p> ): null}
                 </div>
                 <h1 id='info2'>Veuillez insérer les données nécessaires .</h1>
                 <button className='validerButton' type="submit" >Valider</button>

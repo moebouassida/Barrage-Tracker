@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
@@ -15,6 +15,20 @@ import { UserContext } from './UserContext'
 function App()
 {
     const [value,setValue]=useState(false)
+    useEffect(() => {
+        const handleTabClose = event => {
+          event.preventDefault();
+          localStorage.removeItem('username');
+          localStorage.removeItem('token');
+          setValue(false);
+        };
+    
+        window.addEventListener('beforeunload', handleTabClose);
+    
+        return () => {
+          window.removeEventListener('beforeunload', handleTabClose);
+        };
+      }, []);
 return (
     <div>
     <Router>

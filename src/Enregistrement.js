@@ -8,7 +8,7 @@ import data from './img/data.png';
 export default function Enregistrement() {
 
     const navigate = useNavigate();
-    return(<div><Navbar where={"Edit"} logout_icon={true} />
+    return(<div><Navbar where={"Edit"} user={true} />
     <div className="line0">
         <div className="line3"></div>
         <div className="line4"></div>

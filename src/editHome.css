@@ -34,7 +34,7 @@
 
 .validerButton {
     position: absolute;
-    bottom: 23%;
+    bottom: 35%;
     left: 27%;
     font-size: 1.6vw;
     font-family: 'Montserrat', sans-serif;
@@ -109,19 +109,19 @@
 .edit-error-date {
     top: 50%;
     color: red;
-    font-size: 1.2vw;
+    font-size: 0.8vw;
     font-family: 'Gilroy ExtraBold';
     position: absolute;
-    left: 40%;
+    left: 37.8%;
 }
 
 .edit-error-nom {
     top: 50%;
     color: red;
-    font-size: 1.2vw;
+    font-size: 0.8vw;
     font-family: 'Gilroy ExtraBold';
     position: absolute;
-    left: 11.8%;
+    left: 12.5%;
 }
 .default-select {
     font-family: "Gilroy ExtraBold";
@@ -205,15 +205,15 @@ option {
         font-size: 1.8vw;
     }
     .edit-error-date {
-        top: 53%;
-        left: 40%;
-        font-size: 1.2vw;
+        top: 54%;
+        left: 38%;
+        font-size: 0.8vw;
     }
 
     .edit-error-nom {
-        top: 53%;
-        left: 11.8%;
-        font-size: 1.2vw;
+        top: 54%;
+        left: 12.8%;
+        font-size: 0.8vw;
     }
 }
 
@@ -236,14 +236,14 @@ option {
     .edit-error-date
     {
         top: 41%;
-        left: 46.5%;
-        font-size: 1.4vw;
+        left: 43.5%;
+        font-size: 1vw;
     }
     .edit-error-nom
     {
         top: 41%;
-        left: 12%;
-        font-size: 1.4vw;
+        left: 13%;
+        font-size: 1vw;
     }
 
     .barrageName {
@@ -289,13 +289,13 @@ option {
     {
         top: 40%;
         left: 43.5%;
-        font-size: 1.6vw;
+        font-size: 1vw;
     }
     .edit-error-nom
     {
         top: 40%;
-        left: 9.2%;
-        font-size: 1.6vw;
+        left: 13.2%;
+        font-size: 1vw;
     }
 
     #info2 {
@@ -331,15 +331,15 @@ option {
     }
     .edit-error-date
     {
-        top: 32%;
-        left: 53.5%;
-        font-size: 1.7vw;
+        top: 33%;
+        left: 52%;
+        font-size: 1.2vw;
     }
     .edit-error-nom
     {
-        top: 32%;
-        left: 13.6%;
-        font-size: 1.7vw;
+        top: 33%;
+        left: 16.6%;
+        font-size: 1.2vw;
     }
 
     #info2 {
@@ -418,14 +418,14 @@ option {
     }
     .edit-error-date
     {
-        top: 31%;
-        left: 63%;
-        font-size: 2vw;
+        top: 32%;
+        left: 60%;
+        font-size: 1.7vw;
     }
     .edit-error-nom
     {
-        top: 31%;
-        left: 14.8%;
-        font-size: 2vw;
+        top: 32%;
+        left: 16.8%;
+        font-size: 1.7vw;
     }
 }
