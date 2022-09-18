@@ -190,6 +190,7 @@
     font-family: "Gilroy ExtraBold";
     font-size: 2vw;
     font-weight: bolder;
+    display: none;
 }
 
 option {

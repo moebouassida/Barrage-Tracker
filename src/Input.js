@@ -1,4 +1,4 @@
-import { useNavigate,useSearchParams } from "react-router-dom";
+import { useNavigate,useSearchParams,createSearchParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./Input.css";
 
@@ -23,7 +23,6 @@ export default function Input() {
   const Date=searchparams.get('Date');
   const Nom_Fr=searchparams.get('Nom_Fr').toLowerCase();
   const index=barrageListFr.indexOf(Nom_Fr);
-  console.log(index)
 
   const navigate = useNavigate();
   const {value,setValue}=useContext(UserContext)
@@ -65,7 +64,7 @@ export default function Input() {
         params: {
           Nom_Fr: Nom_Fr,
           Date: Date,
-        },
+        },headers : {"x-access-token":localStorage.getItem('token')}
       })
       .then((response) => {
         const element = response.data;
@@ -128,40 +127,60 @@ export default function Input() {
         }
       })
       .catch((error) => {
-        console.log("lmochkel fel connection");
-        console.log(error);
+        if (error.request.status===401)
+        {
+          localStorage.removeItem('username');localStorage.removeItem('token');setValue(false);
+          navigate({pathname:'/login',search:createSearchParams({ auth : true}).toString()})
+        } 
+        else
+        {
+          console.log(error)
+        }
       });
   }, []);
   
   const createElement = (v) => {
     console.log(v);
     axios
-      .post(create_url,  {...v, } )
-
+      .post(create_url,{...v, },{headers : {"x-access-token":localStorage.getItem('token')}})
       .then((response) => {
         console.log(response); 
         console.log("element created");
       })
       .catch((error) => {
-        console.log("lmochkel fel connection element");
-        console.log(error.message);
+        if (error.request.status===401)
+        {
+          localStorage.removeItem('username');localStorage.removeItem('token');setValue(false);
+          navigate({pathname:'/login',search:createSearchParams({ auth : true}).toString()})
+        } 
+        else
+        {
+          console.log(error)
+        }
       });
   };
 
   const updateInputs = (id, values) => {
     console.log(values);
     axios
-      .put(updateInput_url, {
+      .put(updateInput_url,{
         id: id,
         ...values,
-      })
+      },{headers:{"x-access-token":localStorage.getItem('token')}})
       .then((response) => {
         console.log(response);
         console.log("samir");
       })
       .catch((error) => {
-        console.log("lmochkel fel connection2");
-        console.log(error.message);
+        if (error.request.status===401)
+        {
+          localStorage.removeItem('username');localStorage.removeItem('token');setValue(false);
+          navigate({pathname:'/login',search:createSearchParams({ auth : true}).toString()})
+        } 
+        else
+        {
+          console.log(error)
+        }
       });
   };
 

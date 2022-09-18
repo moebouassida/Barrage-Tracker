@@ -26,11 +26,11 @@ export default function User() {
   };
   const validationSchema = Yup.object({
     Email: Yup.string()
-      .email("invalid email address.")
-      .required("required *"),
+      .email("Adresse Email invalide.")
+      .required("Champ obligatoire *"),
     Password: Yup.string()
-      .required("No password provided.")
-      .min(8, "Password is too short - should be 8 chars minimum."),
+      .required("Champ obligatoire *")
+      .min(8, "Mot de passe doit comporter au moins 8 caractères."),
   });
   const formik = useFormik({
     initialValues, validationSchema, onSubmit: (values) => {login(values,setBool,navigate,setValue) }

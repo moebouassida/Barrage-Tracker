@@ -107,18 +107,18 @@ export default function DataVis() {
     }
 
     const changeFirstTime = (event) => {
-        if (event.target.value == 'Une semaine')
+        if (event.target.value == '7 Jours')
             setFirstChartTime(7)
-        else if (event.target.value == 'Deux semaines')
+        else if (event.target.value == '14 Jours')
             setFirstChartTime(14)
         else
             setFirstChartTime(30)
     }
 
     const changeSecTime = (event) => {
-        if (event.target.value == 'Une semaine')
+        if (event.target.value == '7 Jours')
             setSecChartTime(7)
-        else if (event.target.value == 'Deux semaines')
+        else if (event.target.value == '14 Jours')
             setSecChartTime(14)
         else
             setSecChartTime(30)
@@ -169,9 +169,9 @@ export default function DataVis() {
                 <div className='firstChart'>
                     <div className='timeSection' id='time1'>
                         <select className='time' onChange={changeFirstTime}>
-                            <option>Une semaine</option>
-                            <option>Deux semaines</option>
-                            <option>30 jours</option>
+                            <option>7 Jours</option>
+                            <option>14 Jours</option>
+                            <option>30 Jours</option>
                         </select>
                     </div>
                     <FirstChart date={firstChartTime} location={location} />
@@ -179,9 +179,9 @@ export default function DataVis() {
                 <div className='secChart'>
                     <div className='timeSection' id='time2'>
                         <select className='time' onChange={changeSecTime}>
-                            <option>Une semaine</option>
-                            <option>Deux semaines</option>
-                            <option>30 jours</option>
+                            <option>7 Jours</option>
+                            <option>14 Jours</option>
+                            <option>30 Jours</option>
                         </select>
                     </div>
                     <SecChart date={secChartTime} location={location} />
